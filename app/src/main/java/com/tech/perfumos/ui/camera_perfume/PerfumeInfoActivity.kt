@@ -1396,8 +1396,7 @@ class PerfumeInfoActivity : BaseActivity<ActivityPerfumeInfoBinding>() {
 
     }
 
-
-    private fun loadOcasionChart() {
+    /**private fun loadOcasionChart() {
         val labels = listOf("Daily", "Evening", "Business", "Night Out", "Leisure")
         val values = listOf(10f, 9f, 4f, 8f, 2f)
         val entries = values.map { RadarEntry(it) }
@@ -1405,8 +1404,8 @@ class PerfumeInfoActivity : BaseActivity<ActivityPerfumeInfoBinding>() {
         val maxValue = values.maxOrNull() ?: 5f
 // Create dataset
         val dataSet = RadarDataSet(entries, "Usage").apply {
-            /*color = Color.CYAN
-            fillColor = Color.CYAN*/
+//            color = Color.CYAN
+//            fillColor = Color.CYAN
             setDrawFilled(true)
             // fillDrawable = ContextCompat.getDrawable(this@PerfumeInfoActivity, R.drawable.radar_gradient)
             fillAlpha = 180
@@ -1458,7 +1457,7 @@ class PerfumeInfoActivity : BaseActivity<ActivityPerfumeInfoBinding>() {
         )
 
         binding.classificationChart.invalidate()
-    }
+    }*/
 
     private fun loadSeasonChart() {
         /*SeasonLabels.addAll(listOf("Winter", "Fall", "Night Out", "Spring"))
@@ -1487,7 +1486,10 @@ class PerfumeInfoActivity : BaseActivity<ActivityPerfumeInfoBinding>() {
 
         val typeface = ResourcesCompat.getFont(this, R.font.alice_regular)
         binding.classificationChart.xAxis?.typeface = typeface
-
+        binding.classificationChart.apply {
+            rotationAngle = 45f   // Fix start at 90° (top)
+            isRotationEnabled = false  // Prevent user rotation
+        }
         // Configure axis labels
         binding.classificationChart.xAxis?.apply {
             valueFormatter = IndexAxisValueFormatter(SeasonLabels)

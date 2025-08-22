@@ -220,13 +220,14 @@ class CameraActivity : BaseActivity<ActivityCameraBinding>() {
     private fun cameraCaptureAnim() {
 
         binding.ivCameraBg.setImageResource(R.drawable.camera_searching_bg)
-        binding.ivGif.visibility = View.VISIBLE
-        Glide.with(this)
-            .asGif()
-            .load(R.drawable.logo_gif)  // Put your .gif in `res/drawable`
-            .transition(DrawableTransitionOptions.withCrossFade())
-            .into(binding.ivGif)
-
+        binding.ivLogo.visibility = View.VISIBLE
+//        Glide.with(this)
+//            .asGif()
+//            .load(R.drawable.logo_gif)  // Put your .gif in `res/drawable`
+//            .transition(DrawableTransitionOptions.withCrossFade())
+//            .into(binding.ivGif)
+        binding.ivLogo.setAnimation(R.raw.perfume_scan)
+        binding.ivLogo.playAnimation()
         /*Glide.with(this)
             .asGif()
             .load(R.drawable.shining_stars)  // Put your .gif in `res/drawable`
