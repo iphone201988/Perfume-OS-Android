@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.utils.BaseCustomDialog.Listener" />
+    </data>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_stroke_white_55"
+        android:backgroundTint="@color/white">-->
+
+        <!--  <eightbitlab.com.blurview.BlurView
+              android:id="@+id/blurView"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              app:blurOverlayColor="@color/white">-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/flTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_10sdp"
+            >
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:blurOverlayColor="@color/colorOverlayDialog"
+
+            >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_20sdp">
+
+            <!--<ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/icon_solid_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />-->
+
+
+            <TextView
+                android:id="@+id/tvTakePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/rounded_background_setting_white_70"
+                android:backgroundTint="#CBFFFFFF"
+                android:fontFamily="@font/alice_regular"
+                android:gravity="center"
+                android:text="@string/take_a_photo"
+                android:textColor="@color/trophy_color2"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="@{v-> callback.onViewClick(v)}"
+
+                />
+
+            <TextView
+                android:id="@+id/tvSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/alice_regular"
+                android:background="@drawable/rounded_background_setting_white_70"
+                android:backgroundTint="#CBFFFFFF"
+                android:gravity="center"
+                android:text="@string/search_a_perfume"
+                android:textColor="@color/color_forget_pass"
+                android:textSize="@dimen/_18ssp"
+                android:onClick="@{v-> callback.onViewClick(v)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTakePhoto" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </eightbitlab.com.blurview.BlurView>
+        <!--
+                </eightbitlab.com.blurview.BlurView>
+        -->
+        </androidx.cardview.widget.CardView>
+
+    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+</layout>

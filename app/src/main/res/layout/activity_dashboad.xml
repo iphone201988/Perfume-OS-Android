@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.dashboad.DashboardVm" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        tools:context=".ui.activities.HomeActivity">
+
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/glass"
+            />
+
+        <!--<ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_img"
+            android:adjustViewBounds="true" />-->
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/homeSectionNav"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:defaultNavHost="true" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:fabCradleMargin="10dp"
+            
+            android:background="@android:color/transparent"
+            android:backgroundTint="@color/bottom_bar_color"
+            app:fabCradleRoundedCornerRadius="10dp"
+            app:fabCradleVerticalOffset="10dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@android:color/transparent"
+                app:itemIconTint="@color/nav_item_colors"
+                app:itemTextColor="@color/nav_item_colors"
+                app:labelVisibilityMode="unlabeled"
+                app:menu="@menu/bottom_nav_menu" />
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabCamera"
+            style="@style/Floating"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:onClick="@{v-> vm.onClick(v)}"
+            app:elevation="8dp"
+            app:layout_anchor="@id/bottomAppBar" />
+        <!-- <com.google.android.material.floatingactionbutton.FloatingActionButton
+             android:id="@+id/idFABAdd"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="8dp"
+             android:layout_marginBottom="16dp"
+             android:background="@null"
+             android:contentDescription="@string/app_name"
+             android:padding="4dp"
+             android:src="@drawable/camer_icon"
+             app:backgroundTint="@null"
+             app:layout_anchor="@id/bottomAppBar"
+             app:tint="@color/white" />-->
+
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

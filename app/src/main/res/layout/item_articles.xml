@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.articles_folder.Article" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{v ->callback.onItemClick(v, bean, pos)}"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_6sdp"
+        android:background="@drawable/artical_rv"
+        android:elevation="@dimen/_7sdp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/article_card_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140sdp"
+            android:padding="@dimen/_1sdp"
+            loadImage="@{bean.image}"
+            android:scaleType="centerCrop"
+            android:src="@drawable/article_dummy_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/CornerSize7Percent" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_img_shade"
+            android:padding="@dimen/_1sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/article_card_image"
+            app:shapeAppearance="@style/CornerBottom7Percent" />
+
+        <TextView
+            android:id="@+id/headingTitle"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:gravity="start|center"
+            android:text="@{bean.title}"
+            tools:text="dqwqwcqwq"
+            android:textColor="@color/tv_white"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/article_card_image"
+            app:layout_constraintEnd_toEndOf="@+id/article_card_image"
+            app:layout_constraintStart_toStartOf="@+id/article_card_image" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

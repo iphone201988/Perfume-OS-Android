@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.camera_perfume.model.AccordsModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.tech.perfumos.utils.CustomGradientSeekBar
+            android:id="@+id/customSeekBar"
+            labelText="@{bean.name}"
+            labelTextColor="@{bean.labelColor}"
+            seekbarThumbColor="@{bean.thumbColor}"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:max="100"
+            android:progress="@{bean.progress}"
+            android:splitTrack="false"
+            android:thumbOffset="0dp"
+            app:cornerRadius="60dp"
+            app:labelTextSize="@dimen/_9ssp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:progressGradientEndColor="@color/bgStrokeFill35_50"
+            app:progressGradientStartColor="@color/bgStrokeFill35_50"
+            app:seekBackgroundColor="@color/bgStrokeFill35_50"
+            app:seekEnable="false"
+            app:show_background="false"
+            app:thumbSize="26dp"
+            app:trackHeight="29dp"
+            tools:progress="50"
+
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

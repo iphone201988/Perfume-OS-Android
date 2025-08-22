@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="size"
+            type="Integer" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.setting.SettingModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{v->callback.onItemClick(v,bean,pos)}"
+        android:paddingTop="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/reminder_icon"
+            imageDrawableSet="@{bean.drawable}"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            app:tint="@color/text_secondary_color"
+            app:layout_constraintBottom_toBottomOf="@+id/reminder_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/reminder_tv" />
+
+        <TextView
+            android:id="@+id/reminder_tv"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:gravity="center|start"
+            android:text="@{bean.name}"
+            android:textColor="@color/home_heading"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@+id/switchButton1"
+            app:layout_constraintEnd_toStartOf="@+id/switchButton1"
+            app:layout_constraintStart_toEndOf="@+id/reminder_icon"
+            app:layout_constraintTop_toTopOf="@+id/switchButton1" />
+
+        <ImageView
+            android:id="@+id/switchButton1"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@drawable/left_arrow_icon_setting"
+            app:tint="@color/text_secondary_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/viewLayout"
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@color/color_divider"
+            android:visibility="@{pos==(size-1)?View.GONE  :View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@+id/reminder_tv" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

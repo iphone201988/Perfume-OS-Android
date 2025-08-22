@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="showAns"
+            type="Boolean" />
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.quiz.model.AnsListModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@{bean.ansSelected==false?@drawable/bg_ans_unselected :@drawable/bg_ans_selected}"
+        android:onClick="@{v ->callback.onItemClick(v, bean, pos)}"
+        android:layout_marginBottom="@dimen/_10sdp"
+        >
+
+
+        <TextView
+            android:id="@+id/tvAns"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:text="@{bean.ans}"
+            android:textColor="@{bean.ansSelected==false?@color/themeTextView1:@color/tv_white}"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/ivCorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{bean.correct==true?@drawable/icon_correct:@drawable/icon_wrong}"
+            android:visibility="@{showAns==true?View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

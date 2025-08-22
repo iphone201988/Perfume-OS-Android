@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="size"
+            type="Integer" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.onboarding_folder.OnboardingModel" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:onClick="@{v ->callback.onItemClick(v, bean, pos)}"
+        backgroundSet="@{bean.selected}"
+        >
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            imageDrawableSet="@{bean.imageDrawable}"
+            android:layout_width="@dimen/_19sdp"
+            android:layout_height="@dimen/_19sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:visibility="@{bean.imageViewVisible==true?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textHeading"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textHeading"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@{bean.text}"
+
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="normal"
+            android:textColor="@{bean.selected ? @color/white : @color/themeTextView}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

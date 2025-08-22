@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.quiz.model.LeaderBoardList" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:onClick="@{v->callback.onItemClick(v, bean, pos)}"
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:elevation="@dimen/_7sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/home_welcome_drawable_lead"
+        android:backgroundTint="@color/white_60"
+        android:paddingVertical="@dimen/_6sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        >
+
+        <LinearLayout
+            android:id="@+id/countColorll"
+            trophyLayout="@{pos}"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/userProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/userProfile">
+
+            <TextView
+                android:id="@+id/headingTitle"
+                style="@style/CustomAliceTextview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="@dimen/_11ssp"
+                android:text="@{String.valueOf(pos+1)}"
+                trophyTextColor="@{pos}"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <com.tech.perfumos.utils.SingleColorStroke
+            android:id="@+id/userProfile"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/dummy_image"
+            loadImage="@{bean.profileImage}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/countColorll"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
+
+        <TextView
+            android:id="@+id/nameUser"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="start|center"
+            android:text="@{bean.fullname}"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/count"
+            app:layout_constraintStart_toEndOf="@+id/userProfile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/count"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="start|center"
+            android:text='@{String.valueOf(bean.totalEarnedPoints)}'
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/trophy_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/trophy_icon"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/trophy_icon"
+            bgTrophyAlpha="@{pos}"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

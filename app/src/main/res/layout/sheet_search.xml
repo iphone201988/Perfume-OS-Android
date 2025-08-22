@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/icon_solid_close1" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/flTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_below="@+id/ivClose"
+                android:layout_marginTop="@dimen/_10sdp"
+                >
+
+
+            <eightbitlab.com.blurview.BlurView
+                android:id="@+id/blurView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:blurOverlayColor="@color/colorOverlayDialog">
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ivClose">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ivClose"
+
+                android:orientation="vertical"
+                app:backgroundTint="#F5FFFFFF">
+
+                <LinearLayout
+                    android:id="@+id/searchLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@+id/ivClose"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/search_drawable">
+
+                    <ImageView
+                        android:id="@+id/ivSearch"
+                        android:layout_width="@dimen/_19sdp"
+                        android:layout_height="@dimen/_19sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:src="@drawable/search_icon"
+                        app:tint="#222222"
+                        />
+
+                    <EditText
+                        android:id="@+id/edSearch"
+                        style="@style/CustomAliceEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/transparent"
+                        android:gravity="center_vertical"
+                        android:hint="Search"
+                        android:paddingStart="5dp"
+                        android:paddingTop="@dimen/_10sdp"
+
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/userNameIconSignup" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/labelRecentSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Recent Search"
+                    android:fontFamily="@font/alice_regular"
+                    android:textColor="@color/themeTextView"
+                    />
+
+
+                <!--  <androidx.constraintlayout.widget.ConstraintLayout
+                      android:id="@+id/cl_TopSearch"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginHorizontal="@dimen/_10sdp"
+                      android:layout_marginTop="@dimen/_20sdp"
+                      android:background="@drawable/bg_stroke_35"
+                      android:padding="@dimen/_10sdp"
+                      app:layout_constraintTop_toBottomOf="@+id/tv_desc">-->
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRecentSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_stroke_white_70"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    app:backgroundTint="@color/white"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/review_item_card" />
+
+                <!--  </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+                <TextView
+                    android:id="@+id/labelTopSearch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alice_regular"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Top Search"
+                    android:textColor="@color/themeTextView" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTopSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_stroke_white_70"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    app:backgroundTint="@color/white"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/review_item_card" />
+
+
+                <TextView
+                    android:id="@+id/noDataFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="No perfume found"
+                    android:fontFamily="@font/alice_regular"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_stroke_white_70"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingHorizontal="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    app:backgroundTint="@color/white"
+                    android:minHeight="@dimen/_500sdp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/review_item_card" />
+
+
+
+
+            </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            </eightbitlab.com.blurview.BlurView>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>

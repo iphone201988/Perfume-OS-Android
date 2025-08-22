@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.quiz.QuizVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.quiz.QuizActivity">
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/glass" />
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:onClick="@{v-> vm.onClick(v)}"
+            android:src="@drawable/ic_back_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/headingTitle"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center"
+            android:text="@string/quiz_detail"
+            android:textColor="@color/headerColor1"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_btn">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvScoreboard"
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_white_storke"
+                    android:gravity="center"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:text="@string/scoreboard"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:backgroundTint="@color/headerColor"
+                    app:layout_constraintEnd_toStartOf="@+id/tvQuizPlay"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvQuizPlay"
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@drawable/bg_rounded_storke"
+                    android:gravity="center"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:text="@string/quick_play"
+                    android:textColor="@color/headerColor"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/tvRanked"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvScoreboard"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvRanked"
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_storke"
+                    android:gravity="center"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:text="@string/ranked"
+                    android:textColor="@color/headerColor"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvQuizPlay"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clTabs">
+
+                <TextView
+                    android:id="@+id/quizTypeTitle"
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="@string/quiz_types"
+                    android:textColor="@color/home_welcome_txt"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/revLeadBoard"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingBottom="@dimen/_50sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/quizTypeTitle"
+                    tools:listitem="@layout/item_card_daily_leaderboard" />
+
+                <TextView
+                    android:id="@+id/noQuizFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/alice_regular"
+                    android:text="No quiz found"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/quizTypeTitle" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvRankedFalse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/alice_regular"
+                android:paddingHorizontal="@dimen/_25sdp"
+                android:text="You’re almost there!\n\nRanked Quizzes unlock when you reach the top of your current rank. Meanwhile you can continue to play Quick Play Quizzes."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clTabs" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvJoinGame"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_rounded_storke"
+            android:gravity="center"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@string/join_game"
+            android:textColor="@color/headerColor"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

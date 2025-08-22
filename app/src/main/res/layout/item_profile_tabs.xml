@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="size"
+            type="Integer" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.profile_folder.ProfileModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_5sdp"
+        android:onClick="@{v-> callback.onItemClick(v, bean, pos)}"
+        android:layout_marginVertical="@dimen/_5sdp">
+
+        <LinearLayout
+            android:id="@+id/llMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/my_collectionCount"
+                style="@style/CustomAliceTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@{bean.selected==1?@color/profile_section_selected:@color/profile_section_unselected}"
+                android:gravity="center"
+                android:text="@{bean.count}"
+
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/my_collection"
+                style="@style/CustomAliceTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{bean.name}"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@{bean.selected==1?@color/profile_section_selected:@color/profile_section_unselected}"
+                android:textStyle="normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@{bean.selected==1?@color/profile_section_selected:@android:color/transparent}"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/llMain"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:visibility="@{pos==(size-1)?View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/colorAccentDark" />
+
+        <View
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/llMain"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:visibility="@{pos==(size-1)?View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/transparent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

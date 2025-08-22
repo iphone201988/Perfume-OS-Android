@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.profile_folder.BadgeModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:onClick="@{v->callback.onItemClick(v, bean, pos)}"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagePerfume"
+            loadImage="@{bean.BadgeId.image}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/perfume_botton_dummy" />
+
+        <LinearLayout
+            android:id="@+id/llView"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/dividerline"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/imagePerfume" />
+    </LinearLayout>
+</layout>

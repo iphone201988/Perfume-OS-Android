@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.splash.WelcomeActivityVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color_general">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shapeableImageView"
+            animationSplash="@{true}"
+            android:visibility="gone"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/app_logo_splash"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gradientTextView"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:gravity="end"
+            android:text="Perfum"
+            android:textColor="@color/splash_textview"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />
+
+        <TextView
+            android:id="@+id/osTextview"
+            style="@style/CustomAliceTextview"
+            textGradient='@{"OS"}'
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingStart="@dimen/_2sdp"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="normal"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/gradientTextView"
+            app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />
+
+        <TextView
+            android:id="@+id/themeText"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Your Personal Perfume Consultant"
+            android:textColor="@color/themeTextView"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/osTextview" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

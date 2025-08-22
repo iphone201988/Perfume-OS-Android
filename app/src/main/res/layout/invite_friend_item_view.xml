@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.quiz.model.InviteFriendList" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@drawable/bg_rank_card1"
+        android:onClick="@{v ->callback.onItemClick(v, bean, pos)}"
+        android:paddingVertical="@dimen/_2sdp"
+        android:paddingHorizontal="@dimen/_5sdp">
+
+
+        <com.tech.perfumos.utils.SingleColorStroke
+            android:id="@+id/userProfile"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            loadImage="@{bean.profileImage}"
+
+            android:src="@drawable/dummy_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
+
+        <TextView
+            android:id="@+id/nameUser"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="start|center"
+            android:text="@{bean.fullname}"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cvSelect"
+            app:layout_constraintStart_toEndOf="@+id/userProfile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/cvSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:button="@drawable/checkbox_selector"
+            android:buttonTint="@color/headerColor"
+            android:checked="@{bean.selected}"
+
+            android:onClick="@{v ->callback.onItemClick(v, bean, pos)}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

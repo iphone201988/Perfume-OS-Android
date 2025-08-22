@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.quiz.QuizVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.quiz.GenerateQrCodeActivity">
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/glass" />
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:onClick="@{v-> vm.onClick(v)}"
+            android:src="@drawable/ic_back_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/headingTitle"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center"
+            android:text="@string/invite_friends"
+            android:textColor="@color/headerColor1"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_btn">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/top1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    tools:layout_editor_absoluteX="13dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clQrCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/bg_rank_card_large"
+                        android:paddingVertical="@dimen/_30sdp"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/ivQrCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clTabToCopy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_rank_card"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:paddingVertical="@dimen/_20sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/clQrCode">
+
+                        <TextView
+                            android:id="@+id/tvCode"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="245 879"
+                            android:textColor="@color/headerColor"
+                            android:textSize="@dimen/_22ssp"
+                            android:textStyle="normal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/tvTabToCopy"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:text="@string/tap_code_to_copy"
+                            android:textColor="@color/sub_text_color2"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="normal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvCode" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:gravity="center"
+                        android:text="@string/pin_qr_code_are_unique_and_different_for_each_player_you_can_invite_your_friends_to_play_quizzes_on_one_server_with_the_code_above"
+                        android:textColor="@color/sub_text_color2"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clTabToCopy" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/top1">
+
+                    <TextView
+                        android:id="@+id/tvSave"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_60sdp"
+
+                        android:background="@drawable/bg_rounded_white_storke"
+                        android:gravity="center"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:text="@string/save"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+
+                        app:backgroundTint="@color/headerColor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvShareQrCode"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvShareQrCode"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_60sdp"
+                        android:background="@drawable/bg_rounded_storke"
+                        android:gravity="center"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:text="@string/share"
+                        android:textColor="@color/headerColor"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvSave" />
+
+                    <TextView
+                        android:id="@+id/playButton"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+
+                        android:layout_marginBottom="@dimen/_20sdp"
+
+                        android:background="@drawable/bg_rounded_white_storke"
+                        android:gravity="center"
+                        android:onClick="@{v->vm.onClick(v)}"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:text="@string/play_now"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+
+                        app:backgroundTint="@color/headerColor"
+                        app:layout_constraintEnd_toEndOf="@+id/tvShareQrCode"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="@+id/tvSave"
+                        app:layout_constraintTop_toBottomOf="@+id/tvShareQrCode" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

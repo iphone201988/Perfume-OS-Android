@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Gradient Stroke Layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#006AFA"
+                android:endColor="#67E9E9"
+                android:angle="125" />
+            <corners android:radius="16dp" />
+            <stroke
+                android:width="4dp"
+                android:color="@android:color/transparent" />
+            <padding
+                android:top="0dp"
+                android:right="0dp"
+                android:bottom="0dp"
+                android:left="0dp" />
+        </shape>
+    </item>
+
+    <!-- Solid Fill Layer -->
+    <item
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFF9E6" /> <!-- your fill color -->
+            <corners android:radius="@dimen/_10sdp" />
+        </shape>
+    </item>
+
+</layer-list>

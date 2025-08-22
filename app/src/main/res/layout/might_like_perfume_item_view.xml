@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.articles_folder.model.RecommendationPerfumeList" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:background="@drawable/rounded_rectangle_background"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:onClick="@{v->callback.onItemClick(v, bean, pos)}"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPerfume"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_120sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/perfume_botton_dummy"
+            loadImage="@{bean.image}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

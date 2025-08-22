@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_app">#202020</color>
+    <color name="heading_color">#FFFFFF</color>
+    <color name="unselected_color">#99EBEBEB</color>
+    <color name="bottom_bar_color">#2B2B2B</color>
+    <color name="heading_color_sub">#B5B5B5</color>
+    <color name="heading_color_sub1">#6E6E6E</color>
+    <color name="text_secondary_color">#EBEBEB</color>
+    <color name="text_secondary_color1">#FFFFFF</color>
+
+    <color name="home_heading">#FFFFFF</color>
+    <color name="home_welcome_txt">#EBEBEB</color>
+
+    <color name="white">#2C2D3D</color>
+    <color name="red_color">#ED0606</color>
+    <color name="white_60">#271E80</color>
+    <color name="storke_white">#5349CE</color>
+    <color name="search_stroke">#131313</color>
+    <color name="search_icon_color">#99CDD0FF</color>
+    <color name="tv_bg_fill">#80271E80</color>
+    <color name="black">#FFFFFF</color>
+    <color name="tv_white">#FFFFFF</color>
+    <color name="search_fill">#80202020</color>
+    <color name="color_username_home">#C1C1C1</color>
+    <color name="tv_sub_text">#C1C1C1</color>
+
+    <color name="gradient1">#17BCBD</color>
+    <color name="dark">#FFFFFF</color>
+    <color name="gray">#EBEBEB</color>
+    <color name="gray_60">#EBEBEB</color>
+    <color name="card_color">#25B3B4</color>
+    <color name="card_stroke_color">#80131313</color>
+
+    <color name="themeTextView">#FFFFFF</color>
+    <color name="themeTextView1">#EBEBEB</color>
+    <color name="TvBlack60">#99FFFFFF</color>
+    <color name="TvSearchBlack">#99FFFFFF</color>
+    <color name="textViewH1">#2C2D3D</color>
+    <color name="subtextH1">#1B1C2C</color>
+    <color name="headerColor">#EBEBEB</color>
+    <color name="headerColor1">#EBEBEB</color>
+    <color name="headerColor2">#EBEBEB</color>
+
+    <color name="hintColor">#EBEBEB</color>
+    <color name="sub_text_color">#C1C1C1</color>
+
+    <color name="btnTextColor">#2C2D3D</color>
+    <color name="btnTextColor0">#292929</color>
+    <color name="text_color1">#13A6A7</color>
+    <color name="text_color2">#122259</color>
+
+    <color name="trophy_color1">#67E9E9</color>
+    <color name="trophy_color2">#15C8C9</color>
+    <color name="trophy_color3">#13A6A7</color>
+    <color name="trophy_color">#31FFFFFF</color>
+
+
+    <color name="leader_text_color">#352AA4</color>
+    <color name="profile_section_selected">#25B3B4</color>
+    <color name="profile_section_unselected">#6E6E6E</color>
+
+    <color name="switch_thumb">#086868</color>
+
+    <color name="home_complete_tutorial">#2B2B2B</color>
+    <color name="colorAccent">#25B3B4</color>
+    <color name="colorAccentDark">#25B3B4</color>
+    <color name="colorAccent80">#CC25B3B4</color>
+    <color name="color_divider">#C1C1C1</color>
+    <color name="bgStrokeFill30_50">#80000000</color>
+    <color name="bgStrokeFill35_50">#80000000</color>
+    <color name="bgWhiteFill70_100">#F8000000</color>
+
+    <color name="bgRoundedRecFill">#B3FFFFFF</color>
+    <color name="bgRoundedRecStroke">#2B2B2B</color>
+
+    <color name="bgRec3Fill">#2B2B2B</color>
+    <color name="bgRec3Stroke">#2B2B2B</color>
+
+    <color name="bgSettingFill">#F2000000</color>
+
+    <color name="unselect_tab_text">#AEB1D7</color>
+    <color name="select_tab_text">#FFFFFF</color>
+    <color name="tab_count">#FFFFFF</color>
+
+    <!--Articles fragment-->
+    <color name="article_drawable_fill">#80313131</color>
+    <color name="article_drawable_stroke">#313131</color>
+    <!--Articles fragment-->
+
+    <!--Articles fragment-->
+    <color name="color_forget_pass">#FFFFFF</color>
+    <!--Articles fragment-->
+
+    <!--profile fragment-->
+    <color name="itemDecorate">#212121</color>
+    <color name="itemDecorate0">#00393A</color>
+    <color name="itemDecorate1">#383535</color>
+    <color name="itemDecorate2">#302F2F</color>
+    <!--profile fragment-->
+
+</resources>

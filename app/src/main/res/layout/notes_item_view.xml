@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+         <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.camera_perfume.model.NotesList" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/bg_stroke_white_35"
+            android:backgroundTint="@color/white"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:paddingVertical="@dimen/_5sdp"
+            android:onClick="@{v-> callback.onItemClick(v,bean, pos)}"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivNote"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                loadImage="@{bean.image}"
+                android:padding="@dimen/_3sdp"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+                android:src="@drawable/floral_icon" />
+
+            <TextView
+                android:id="@+id/tvNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_toEndOf="@+id/ivNote"
+                android:fontFamily="@font/alice_regular"
+                android:gravity="start"
+                android:minEms="5"
+                android:text="@{bean.name}"
+                android:textColor="@color/text_secondary_color"
+                android:textSize="@dimen/_10ssp" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/circleImage1"
+        android:layout_width="1200dp"
+        android:layout_height="1100dp"
+        android:src="@drawable/gradiunt_color_radius2"
+        android:translationX="-300dp"
+        android:translationY="-400dp" />
+
+    <ImageView
+        android:id="@+id/circleImage2"
+        android:layout_width="1200dp"
+        android:layout_height="1100dp"
+        android:src="@drawable/gradient_bg_anim"
+
+        android:translationX="-50dp"
+        android:translationY="-100dp" />
+
+    <View
+        android:id="@+id/redDot"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:visibility="gone"
+        android:background="#FF0000" />
+
+    <!-- <com.tech.perfumos.utils.BlendingView
+         xmlns:android="http://schemas.android.com/apk/res/android"
+         android:id="@+id/blendingView"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"/>-->
+
+    <ImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:src="@drawable/glass"
+        />
+
+</merge>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.quiz.QuizVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.quiz.DetailsQuizActivity">
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/glass" />
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:onClick="@{v-> vm.onClick(v)}"
+            android:src="@drawable/ic_back_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/headingTitle"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center"
+            android:text="@string/quiz"
+            android:textColor="@color/headerColor1"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_btn"
+            tools:layout_editor_absoluteX="13dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp"
+                android:src="@drawable/article_dummy_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+
+                />
+
+
+            <TextView
+                android:id="@+id/quizTypeTitle"
+                style="@style/CustomAliceTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="name"
+                android:textColor="@color/select_tab_text"
+                android:textSize="@dimen/_16ssp"
+
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivProfileImage" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_rank_card"
+                app:layout_constraintTop_toBottomOf="@+id/quizTypeTitle">
+
+
+                <LinearLayout
+                    android:id="@+id/llQuestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:orientation="vertical"
+                    android:paddingVertical="@dimen/_10sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/view1"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvQuesCount"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center"
+                        android:text="12"
+                        android:textColor="@color/color_username_home"
+                        android:textSize="@dimen/_18ssp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvQues"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center"
+                        android:text="@string/questions"
+                        android:textColor="@color/color_username_home"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_15sdp"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/llQuestions"
+                    app:layout_constraintEnd_toStartOf="@+id/llPlayed"
+
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/llQuestions"
+                    app:layout_constraintTop_toTopOf="@+id/llQuestions" />
+
+
+                <LinearLayout
+                    android:id="@+id/llPlayed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:orientation="vertical"
+                    android:paddingVertical="@dimen/_10sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/view2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/view1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvPlayedCount"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center"
+                        android:text="12"
+                        android:textColor="@color/color_username_home"
+                        android:textSize="@dimen/_18ssp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvPlayed"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center"
+                        android:text="@string/played"
+                        android:textColor="@color/color_username_home"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_15sdp"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/llPlayed"
+                    app:layout_constraintEnd_toStartOf="@+id/llShared"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/llPlayed"
+                    app:layout_constraintTop_toTopOf="@+id/llPlayed" />
+
+                <LinearLayout
+                    android:id="@+id/llShared"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:orientation="vertical"
+
+                    android:visibility="gone"
+                    android:paddingVertical="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/view2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvSharedCount"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center"
+                        android:text="12"
+                        android:textColor="@color/color_username_home"
+                        android:textSize="@dimen/_18ssp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/tvShared"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center"
+                        android:text="@string/shared"
+                        android:textColor="@color/color_username_home"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/tvDescTitle"
+                style="@style/CustomAliceTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center"
+                android:text="@string/description"
+                android:textColor="@color/tab_count"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clTabs" />
+
+
+            <TextView
+                android:id="@+id/tvDesc"
+                style="@style/CustomAliceTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="start"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                android:textColor="@color/tab_count"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toTopOf="@+id/tvPlaySolo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescTitle" />
+
+
+            <TextView
+                android:id="@+id/tvPlaySolo"
+                style="@style/CustomAliceTextview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/bg_rounded_storke"
+                android:gravity="center"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/play_solo"
+                android:textColor="@color/headerColor"
+
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvPlayWithFriend"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvPlayWithFriend"
+                style="@style/CustomAliceTextview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/bg_rounded_white_storke"
+                app:backgroundTint="@color/headerColor"
+                android:gravity="center"
+                android:onClick="@{v->vm.onClick(v)}"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/play_with_friends"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tvPlaySolo" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

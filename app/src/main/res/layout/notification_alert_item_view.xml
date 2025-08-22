@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:background="@drawable/home_welcome_drawable"
+        android:layout_marginTop="@dimen/_10sdp"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivDot"
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@color/select_dot_indicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            app:shapeAppearance="@style/CornerSize50Percent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/dummy_image"
+            app:layout_constraintStart_toEndOf="@+id/ivDot"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/CornerSize50Percent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="New Top1 Alert!"
+            android:textColor="@color/color_forget_pass"
+            android:textSize="@dimen/_12ssp"
+
+            app:layout_constraintBottom_toTopOf="@+id/tvNotification"
+            app:layout_constraintEnd_toStartOf="@+id/tvTime"
+            app:layout_constraintStart_toEndOf="@+id/ivProfile"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tvNotification"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="We’re pleased to introduce the latest enhancements in our Perfume experience."
+            android:textColor="@color/color_forget_pass"
+
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toTopOf="@+id/btnTryNow"
+            app:layout_constraintEnd_toStartOf="@+id/tvTime"
+            app:layout_constraintStart_toEndOf="@+id/ivProfile"
+
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/btnTryNow"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/try_now"
+            android:textColor="@color/text_color2"
+            android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:textSize="@dimen/_10ssp"
+            android:background="@drawable/bg_rounded_tv_white"
+            android:backgroundTint="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvNotification"
+
+            app:layout_constraintTop_toBottomOf="@+id/tvNotification"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:text="2m"
+            android:textColor="@color/color_forget_pass"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

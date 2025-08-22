@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.model.HistoryPerfumeList" />
+
+        <variable
+            name="size"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:onClick="@{v->callback.onItemClick(v, bean, pos)}"
+        >
+
+        <ImageView
+            android:id="@+id/searchImg"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            loadImage="@{bean.image}"
+            android:src="@drawable/perfume_botton_dummy"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginVertical="@dimen/_5sdp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alice_regular"
+            app:layout_constraintTop_toTopOf="@+id/searchImg"
+            app:layout_constraintBottom_toBottomOf="@+id/searchImg"
+            app:layout_constraintStart_toEndOf="@+id/searchImg"
+            android:text="@{bean.name}"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="start|center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textColor="@color/themeTextView"
+            app:layout_constraintEnd_toStartOf="@+id/ivForward"
+            />
+
+        <ImageView
+            android:id="@+id/ivForward"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:padding="@dimen/_5sdp"
+            android:rotation="180"
+            android:src="@drawable/ic_back_arrow_white"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/text_secondary_color" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/themeTextView"
+            android:alpha="0.2"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:visibility="@{pos == size - 1 ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

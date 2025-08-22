@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/animation_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/grainLayerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/grain_layer"
+        android:alpha="0.5" />
+
+
+    <ImageView
+        android:id="@+id/circleImageView1"
+        android:layout_width="1800dp"
+        android:layout_height="1800dp"
+        android:layout_marginStart="-1000dp"
+        android:layout_marginTop="-1000dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gradiunt_color_radius2" />
+
+    <ImageView
+        android:id="@+id/circleImageView2"
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        android:layout_marginStart="-1000dp"
+        android:layout_marginTop="-1000dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gradiunt_color_radius1" />
+
+    <ImageView
+        android:id="@+id/circleImageView3"
+        android:layout_width="1800dp"
+        android:layout_height="1800dp"
+        android:layout_marginStart="-1000dp"
+        android:layout_marginTop="-1000dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gradiunt_color_radius4" />
+
+    <ImageView
+        android:id="@+id/circleImageView4"
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        android:layout_marginStart="-1000dp"
+        android:layout_marginTop="-1000dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gradiunt_color_radius3" />
+</FrameLayout>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isSelected"
+            type="Integer" />
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.articles_folder.ArticlesFragmentVm" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.dashboad.fragment_folder.articles_folder.ArticlesFragment"
+        >
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/settingIcon"
+                android:layout_width="@dimen/_19sdp"
+                android:layout_height="@dimen/_19sdp"
+                android:backgroundTint="#575757"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:src="@drawable/setting_home"
+                android:onClick="@{v-> vm.onClick(v)}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/toggleSwitchCC"
+                android:layout_width="@dimen/_66sdp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="@dimen/_17sdp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingIcon">
+
+                <ImageView
+                    android:id="@+id/toggleSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="@{v->vm.onClick(v)}"
+
+                    android:src="@{isSelected==1?@drawable/light_mode:@drawable/dark_mode}" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/searchLL"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@drawable/search_drawable"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingIcon"
+                android:layout_marginTop="@dimen/_20sdp"
+                >
+
+                <ImageView
+                    android:layout_width="@dimen/_19sdp"
+                    android:layout_height="@dimen/_19sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:tint="@color/TvBlack60"
+                    android:src="@drawable/search_icon" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/userNameSignUp"
+                    style="@style/CustomAliceEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="@{v->vm.onClick(v)}"
+                    android:backgroundTint="@color/transparent"
+                    android:editable="false"
+                    android:enabled="false"
+                    android:text="Search"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/TvSearchBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userNameIconSignup" />
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/tv_might_like"
+                style="@style/CustomAliceTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:text="@string/perfumes_you_might_like"
+                android:textColor="@color/home_heading"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchLL" />
+
+            <!--<androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                android:fitsSystemWindows="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headingTitle">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvArticles"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:listitem="@layout/item_articles" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_80sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/rvArticles" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMightLike"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/might_like_perfume_item_view"
+                app:layout_constraintTop_toBottomOf="@+id/tv_might_like"
+                />
+
+            <TextView
+                android:id="@+id/noRecommendedFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alice_regular"
+                android:text="No Record Found"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvMightLike"
+                app:layout_constraintBottom_toTopOf="@+id/headingTitle"
+                android:layout_marginBottom="@dimen/_10sdp"
+                />
+
+            <TextView
+                android:id="@+id/headingTitle"
+                style="@style/CustomAliceTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:text="@string/articles_for_you"
+                android:textColor="@color/home_heading"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvMightLike"
+
+                />
+
+            <!--<androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                android:fitsSystemWindows="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headingTitle">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvArticles"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:listitem="@layout/item_articles" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_80sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/rvArticles" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvArticles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_articles"
+                app:layout_constraintTop_toBottomOf="@+id/headingTitle"
+                />
+
+            <TextView
+                android:id="@+id/noArticlesFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alice_regular"
+                android:text="No Record Found"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvArticles"
+
+                android:layout_marginBottom="@dimen/_10sdp"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintTop_toBottomOf="@+id/rvArticles" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>

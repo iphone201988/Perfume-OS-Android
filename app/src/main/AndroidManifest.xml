@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.any" /> <!-- <uses-feature android:name="android.hardware.camera.autofocus" /> -->
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.flash" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.qrcode_scanner.QrcodeScanner"
+            android:exported="true" />
+        <activity
+            android:name=".ui.quiz_scorebroard.QuizScorebroard"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboad.user_profile.UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.ScoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.GenerateQrCodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.InviteFriendsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.JoinPlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.QuizPlayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.JoinGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.DetailsQuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.quiz.QuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.notification.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboad.fragment_folder.home_folder.EarnBadgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.review.ReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.camera_perfume.PerfumerProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.dashboad.fragment_folder.profile_folder.EditProfile"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.auth_folder.password_changed_folder.PasswordChangeSuccess"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.auth_folder.create_new_password_folder.CreateNewPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.auth_folder.verfication_otp_folder.OtpVerification"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.auth_folder.forget_password.ForgetPassword"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.auth_folder.account_create_folder.CreateAccountSuccess"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.auth_folder.create_folder.SignUpActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.auth_folder.login_folder.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
+            <!--
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".ui.dashboad.fragment_folder.change_password_folder.ChangePassword"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
+            <!--
+     <intent-filter>
+         <action android:name="android.intent.action.MAIN" />
+         <category android:name="android.intent.category.LAUNCHER" />
+     </intent-filter>
+            -->
+            <!--
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+            -->
+
+        </activity>
+        <activity
+            android:name=".ui.dashboad.fragment_folder.change_language.ChangeLanguage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.dashboad.fragment_folder.term_of_use.TermOfUseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.dashboad.fragment_folder.privacy_folder.PrivacyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.camera_perfume.PerfumerCitrussActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.camera_perfume.PerfumeInfoActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.camera_perfume.CameraActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.dashboad.fragment_folder.articles_folder.ArticleContent"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.dashboad.fragment_folder.chat_folder.ChatActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.dashboad.DashboardActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing">
+
+            <!--
+                <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+            <!--
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+            -->
+
+        </activity>
+        <activity
+            android:name=".ui.onboarding_folder.OnboardingActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.get_started_folder.GetStartedActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <!--
+<provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".ui.splash.WelcomeActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.base.permission.PermissionsActivity"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <service
+            android:name=".utils.MyFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

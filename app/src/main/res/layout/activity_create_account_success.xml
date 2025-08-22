@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.auth_folder.account_create_folder.CreateAccountSuccessVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.auth_folder.account_create_folder.CreateAccountSuccess">
+
+         <!--   <com.tech.perfumos.utils.BgAnimation
+            android:id="@+id/waveView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false" />-->
+
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/glass"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/_67sdp"
+                android:layout_height="@dimen/_67sdp"
+                android:layout_marginStart="-40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/login_ruby"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hatman_login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.84" />
+
+            <ImageView
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="-45dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/red_pot_login"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="@dimen/_96sdp"
+                android:layout_height="@dimen/_96sdp"
+                android:layout_marginStart="-60dp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/yellow_diamond_login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="-55dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pot_loging"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/successCC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageSuccess"
+                style="@style/CustomAliceTextview"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="-180dp"
+                android:gravity="center"
+                android:src="@drawable/success_mark"
+                android:text="@string/create_new_password"
+                android:textColor="@color/home_heading"
+                android:textSize="@dimen/_24ssp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleHeading"
+                style="@style/CustomAliceTextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:text="@string/account_created"
+
+                android:textColor="@color/app_black"
+                android:textSize="@dimen/_24ssp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageSuccess" />
+
+            <TextView
+                android:id="@+id/successSubTv"
+                style="@style/CustomAliceTextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="center"
+                android:text="@string/your_account_has_been_created_successfully"
+                android:textColor="@color/custom_text_color"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleHeading" />
+
+            <LinearLayout
+                android:id="@+id/getSuccessLayout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/gradient_background"
+                android:onClick="@{v ->vm.onClick(v)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/successSubTv">
+                <TextView
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/get_started"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

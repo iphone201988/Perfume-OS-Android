@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.camera_perfume.CameraVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.camera_perfume.PerfumerCitrussActivity">
+
+         <!--   <com.tech.perfumos.utils.BgAnimation
+            android:id="@+id/waveView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false" />-->
+
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/glass"
+            />
+
+
+        <ImageView
+            android:id="@+id/perfumeImg"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_210sdp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@+id/guide1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/ic_back_btn"
+            android:onClick="@{v->vm.onClick(v)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/bg_shade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_img_shade"
+            app:layout_constraintBottom_toBottomOf="@+id/perfumeImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.65"
+
+            />
+
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/CustomManropBoldTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:gravity="center"
+            android:text="CITRUS"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            android:fontFamily="@font/alice_regular"
+            app:layout_constraintBottom_toTopOf="@+id/tvType"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAddFavorite"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:fontFamily="@font/alice_regular"
+            android:gravity="center"
+            android:text="Perfume Note"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAddFavorite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            app:layout_constraintVertical_bias="0.5" />
+
+
+        <TextView
+            android:id="@+id/tvAddFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_textview_blue_storke"
+            android:fontFamily="@font/alice_regular"
+            android:gravity="center"
+            android:text="@string/add_to_favourite"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:onClick="@{v-> vm.onClick(v)}"
+            app:layout_constraintBottom_toBottomOf="@+id/perfumeImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_20sdp"/>
+
+       <!-- <androidx.cardview.widget.CardView
+            android:id="@+id/tvAddCollection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/perfumeImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:padding="2dp"
+            >
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:blurOverlayColor="@color/colorOverlayFav">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alice_regular"
+            android:gravity="center"
+            android:text="Add to Favourite"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/perfumeImg"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        </eightbitlab.com.blurview.BlurView>
+
+        </androidx.cardview.widget.CardView>-->
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/perfumeImg">
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clmain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_20sdp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_desc_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:drawableLeft="@drawable/ic_description"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/alice_regular"
+                    android:gravity="center"
+                    android:text="@string/description"
+                    android:textColor="@color/text_secondary_color"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/article_content_drawable"
+                    android:fontFamily="@font/alice_regular"
+                    android:gravity="start"
+                    android:hint="Lorem ipsum dolor sit amet consectetur. Ultrices urna tempus lectus in. Consectetur volutpat quis scelerisque cursus dictumst. At diam eget praesent nibh eu egestas. Elit enim dignissim est congue nam lectus suspendisse erat habitasse. Nulla sed euismod nibh egestas nunc magna. Faucibus facilisi vel nunc urna maecenas gravida. Arcu laoreet dictumst quam sagittis commodo arcu sit odio purus."
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/text_secondary_color"
+                    android:textColorHint="@color/gray"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingBottom="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_desc_label" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_release"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/bg_stroke_white_35"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_desc">
+
+                    <TextView
+                        android:id="@+id/tv_year_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:drawableLeft="@drawable/ic_calender"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="center"
+                        android:text="@string/of_perfume_created"
+                        android:textColor="@color/text_secondary_color"
+                        android:textSize="@dimen/_14ssp"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_release_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/article_content_drawable"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="start"
+                        android:padding="@dimen/_10sdp"
+                        android:text="37"
+                        android:textColor="@color/text_secondary_color"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_year_label" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_similar_perfumes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/bg_stroke_35"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_release"
+                    tools:layout_editor_absoluteX="13dp">
+
+
+                    <TextView
+                        android:id="@+id/tv_similar_perfumes_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:drawableLeft="@drawable/ic_star"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="center"
+                        android:text="Perfumes that have this note"
+                        android:textColor="@color/text_secondary_color"
+                        android:textSize="@dimen/_14ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_similar_perfumes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_similar_perfumes_label"
+                        tools:listitem="@layout/single_perfume_item_view"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/similarNoDataFound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/alice_regular"
+                        android:text="No perfume found"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_similar_perfumes_label" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

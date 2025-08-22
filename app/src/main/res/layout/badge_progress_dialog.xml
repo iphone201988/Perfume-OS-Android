@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.utils.BaseCustomDialog.Listener" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.profile_folder.BadgeId" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/flTabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp">
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:blurOverlayColor="@color/colorOverlayDialog"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_20sdp"
+                >
+
+                <!-- <FrameLayout
+                     android:id="@+id/flTabs"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="@drawable/bg_stroke_white_55"
+
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent">-->
+
+
+                <!--<eightbitlab.com.blurview.BlurView
+                    android:id="@+id/blurView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:blurOverlayColor="#B3FFFFFF">-->
+
+
+                <ImageView
+                    android:id="@+id/ivClose"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:onClick="@{v-> callback.onViewClick(v)}"
+                    android:src="@drawable/icon_solid_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivBadge"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    loadImage="@{bean.image}"
+                    android:src="@drawable/achivement1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivClose"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_badge_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/alice_regular"
+                    android:gravity="center"
+                    tools:text="“New Collector”"
+                    android:textColor="@color/headerColor"
+                    android:textSize="@dimen/_22ssp"
+                    android:text="@{bean.name}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivBadge" />
+
+                <TextView
+                    android:id="@+id/tv_badge_sub_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+
+                    android:fontFamily="@font/alice_regular"
+                    android:gravity="center"
+                    android:text="78% Completed"
+                    android:textColor="@color/sub_text_color"
+                    android:textSize="@dimen/_8ssp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/badgeProgress"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_badge_title"
+
+                    />
+
+                <com.tech.perfumos.utils.CustomGradientSeekBar
+                    android:id="@+id/badgeProgress"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:max="100"
+                    android:progress="78"
+                    app:cornerRadius="70dp"
+                    android:layout_marginStart="-16dp"
+                    android:layout_marginEnd="-16dp"
+                    android:layout_marginTop="-5dp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_badge_description"
+                    app:layout_constraintStart_toStartOf="@+id/tv_badge_description"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_badge_sub_title"
+                    app:progressGradientEndColor="#67E9E9"
+                    app:progressGradientStartColor="#5349CE"
+                    app:progressShadow="true"
+                    app:seekBackgroundColor="@color/main_seek_bar"
+                    app:seekEnable="false"
+                    app:thumbColorEnd="#66DDE7"
+                    app:thumbColorStart="#66DDE7"
+                    app:thumbSize="0dp"
+                    app:thumbStrokeColor="#95F5FF"
+                    app:trackHeight="8dp" />
+
+
+                <TextView
+                    android:id="@+id/tv_badge_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/rounded_rectangle_background2"
+                    android:fontFamily="@font/alice_regular"
+                    android:gravity="center"
+                    android:text="Added 5 Perfumes to “My Collection"
+                    android:textColor="@color/themeTextView"
+                    android:textSize="@dimen/_10ssp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_badge_title"
+                    app:layout_constraintStart_toStartOf="@+id/tv_badge_title"
+                    app:layout_constraintTop_toBottomOf="@+id/badgeProgress"
+
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </eightbitlab.com.blurview.BlurView>
+        <!--
+                </eightbitlab.com.blurview.BlurView>
+        -->
+    </androidx.cardview.widget.CardView>
+
+</layout>

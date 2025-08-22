@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.splash.WelcomeActivityVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.onboarding_folder.OnboardingActivity">
+
+        <!--<ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_img"
+            android:scaleType="fitXY"
+            />-->
+
+        <!--   <com.tech.perfumos.utils.BgAnimation
+               android:id="@+id/waveView"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:clipChildren="false" />-->
+
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/glass" />
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:onClick="@{v-> vm.onClick(v)}"
+            android:src="@drawable/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_24sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@+id/languageLL"
+            app:layout_constraintStart_toEndOf="@+id/back_btn"
+            app:layout_constraintTop_toTopOf="@+id/back_btn">
+
+           <!-- <SeekBar
+                android:id="@+id/skProgress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_8sdp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/bg_seekbar_progress"
+                android:thumb="@drawable/transparent_thumb"
+
+                android:thumbOffset="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />-->
+            <com.tech.perfumos.utils.CustomGradientSeekBar
+                android:id="@+id/skProgress"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:max="100"
+                android:progress="20"
+                app:cornerRadius="70dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:progressGradientEndColor="#67E9E9"
+                app:progressGradientStartColor="#5349CE"
+                app:seekBackgroundColor="@color/main_seek_bar"
+                app:seekEnable="false"
+                app:progressShadow="true"
+                app:thumbColorEnd="#66DDE7"
+                app:thumbColorStart="#66DDE7"
+                app:thumbSize="0dp"
+                app:thumbStrokeColor="#95F5FF"
+                app:trackHeight="8dp" />
+
+           <!-- <View
+                android:id="@+id/viewMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_seek_progress" />
+
+            <View
+                android:id="@+id/viewSec"
+                android:layout_width="12.5dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_background"
+                app:layout_constraintBottom_toBottomOf="@+id/viewMain"
+                app:layout_constraintStart_toStartOf="@+id/viewMain"
+                app:layout_constraintTop_toTopOf="@+id/viewMain" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/languageLL"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:onClick="@{v-> vm.onClick(v)}"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_7sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/_19sdp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/us_flag" />
+
+            <TextView
+                android:id="@+id/textLanguage"
+                style="@style/CustomAliceTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_2sdp"
+
+                android:gravity="start|center"
+                android:text="EN"
+                android:textColor="@color/app_black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_btn">
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="9dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pot_onboarding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textDescription" />
+
+            <TextView
+                android:id="@+id/textHeading"
+                style="@style/CustomAliceTextview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="start"
+                android:text="Get Started"
+                android:textColor="@color/app_black"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.551"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textDescription"
+                style="@style/CustomAliceTextview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="start"
+                android:text="( This wil be used to enhance your experience)"
+                android:textColor="@color/heading_color_sub"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textHeading" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_50sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hat_onboarding"
+                app:layout_constraintBottom_toTopOf="@+id/continueLL"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_63sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/diamond_onboarding"
+                app:layout_constraintBottom_toTopOf="@+id/continueLL"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+
+                app:layout_constraintBottom_toTopOf="@+id/continueLL"
+                app:layout_constraintTop_toBottomOf="@+id/textDescription">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/onboardingRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_intensity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_150sdp"
+                    android:background="@drawable/bg_stroke_35"
+                    android:paddingHorizontal="@dimen/_25sdp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="13dp">
+
+                    <!--<SeekBar
+                        android:id="@+id/skIntenseProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/bg_seekbar"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/seek_thumb"
+                        android:thumbOffset="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />-->
+
+                    <com.tech.perfumos.utils.CustomGradientSeekBar
+                        android:id="@+id/skIntenseProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:max="100"
+                        android:progress="50"
+                        android:splitTrack="false"
+                        android:thumbOffset="0dp"
+                        app:cornerRadius="60dp"
+                        app:labelTextColor="#000000"
+                        app:labelTextSize="@dimen/_11ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:progressGradientEndColor="#67E9E9"
+                        app:progressGradientStartColor="#5349CE"
+                        app:seekBackgroundColor="@color/bg_grey"
+                        app:seekEnable="true"
+                        app:thumbColorEnd="#66DDE7"
+                        app:thumbColorStart="#66DDE7"
+                        app:thumbSize="20dp"
+                        app:thumbStrokeColor="#95F5FF"
+                        app:trackHeight="10dp" />
+
+
+                    <TextView
+                        android:id="@+id/Light"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:gravity="start"
+                        android:text="Light"
+                        android:textColor="#5451CF"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/skIntenseProgress"
+                        app:layout_constraintTop_toBottomOf="@+id/skIntenseProgress" />
+
+                    <TextView
+                        android:id="@+id/Strong"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_11sdp"
+
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:gravity="start"
+                        android:text="Strong"
+                        android:textColor="#006AFA"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/skIntenseProgress"
+                        app:layout_constraintTop_toBottomOf="@+id/skIntenseProgress" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:background="@drawable/bg_stroke_white_35"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvDateLabel"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_calender"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="@string/date_of_birth"
+                        android:textColor="@color/text_secondary_color"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/article_content_drawable"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toStartOf="@id/spinnerMonth"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDateLabel" />
+
+                    <Spinner
+                        android:id="@+id/spinnerMonth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/article_content_drawable"
+                        app:layout_constraintEnd_toStartOf="@id/spinnerYear"
+                        app:layout_constraintStart_toEndOf="@id/spinnerDate"
+                        app:layout_constraintTop_toBottomOf="@id/tvDateLabel" />
+
+
+                    <Spinner
+                        android:id="@+id/spinnerYear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/article_content_drawable"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/spinnerMonth"
+                        app:layout_constraintTop_toBottomOf="@id/tvDateLabel" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_referral_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:background="@drawable/bg_stroke_white_35"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvReferralLabel"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_message"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:text="Referral code"
+                        android:textColor="@color/text_secondary_color"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edReferralCode"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/article_content_drawable"
+                        android:hint="@string/referral_code"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvReferralLabel" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/continueLL"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/gradient_background"
+                android:onClick="@{v-> vm.onClick(v)}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Continue"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

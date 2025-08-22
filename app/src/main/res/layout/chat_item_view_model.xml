@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.chat_folder.ChatModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/leftCC"
+            constraintLayoutLeftCC="@{bean}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:clipToPadding="true"
+            android:paddingRight="@dimen/_50sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/receiverText"
+                style="@style/CustomManropTextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:background="@drawable/chat_left_drawable"
+                android:gravity="center|start"
+                android:padding="@dimen/_10sdp"
+                android:text="@{bean.text}"
+                android:textColor="@color/text_color_chat_receiver"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toTopOf="@+id/receiverProfileCar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/receiverProfileCar"
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="@dimen/_22sdp"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="81dp">
+
+                <com.tech.perfumos.utils.GradientStrokeImageView2
+                    android:id="@+id/receiverProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_1sdp"
+                    android:src="@drawable/dummy_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/receiverCC"
+                    app:strokeWidth2="1dp" />
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rightCC"
+            constraintLayoutRightCC="@{bean}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:clipToPadding="true"
+            android:paddingStart="@dimen/_50sdp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/sendText"
+                style="@style/CustomManropBoldTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat_right_drawable"
+                android:gravity="center|start"
+                android:padding="@dimen/_10sdp"
+                android:text="@{bean.text}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

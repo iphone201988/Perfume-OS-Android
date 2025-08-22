@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.profile_folder.BadgeId" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:onClick="@{v->callback.onItemClick(v, bean, pos)}"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagePerfume"
+            loadImage="@{bean.image}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/earn_badge_img" />
+
+
+    </LinearLayout>
+</layout>

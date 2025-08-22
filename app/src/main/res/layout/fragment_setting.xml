@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.setting.SettingFragmentVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.dashboad.fragment_folder.setting.SettingFragment">
+
+        <!-- <com.tech.perfumos.utils.BgAnimation
+           android:id="@+id/waveView"
+           android:layout_width="match_parent"
+           android:clipChildren="false"
+           android:layout_height="match_parent" />-->
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/glass" />
+
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/headingTitle">
+
+                <TextView
+                    android:id="@+id/headingTitle"
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:gravity="center"
+                    android:text="@string/settings"
+                    android:textColor="@color/home_heading"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:onClick="@{v-> vm.onClick(v)}"
+                    android:src="@drawable/ic_back_btn"
+                    app:layout_constraintBottom_toBottomOf="@+id/headingTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/headingTitle" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayoutI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@drawable/rounded_background_setting"
+                    android:padding="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/headingTitle">
+
+                    <ImageView
+                        android:id="@+id/reminder_icon"
+                        android:layout_width="@dimen/_13sdp"
+                        android:layout_height="@dimen/_13sdp"
+                        android:src="@drawable/ic_reminder"
+                        app:layout_constraintBottom_toBottomOf="@+id/reminder_tv"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/reminder_tv" />
+
+                    <TextView
+                        android:id="@+id/reminder_tv"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:gravity="center|start"
+                        android:text="@string/reminder"
+                        android:textColor="@color/home_heading"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="@+id/switchButton1"
+                        app:layout_constraintEnd_toStartOf="@+id/switchButton1"
+                        app:layout_constraintStart_toEndOf="@+id/reminder_icon"
+                        app:layout_constraintTop_toTopOf="@+id/switchButton1" />
+
+                    <com.tech.perfumos.utils.SwitchButton
+                        android:id="@+id/switchButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:kswBackDrawable="@drawable/customswictherselector"
+
+                        app:kswThumbColor="@color/switch_thumb"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/viewLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height=".5dp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@color/color_divider"
+                        app:layout_constraintTop_toBottomOf="@+id/reminder_tv"
+                        tools:layout_editor_absoluteX="6dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/settingRv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingBottom="@dimen/_10sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/viewLayout"
+                        tools:listitem="@layout/setting_rv_item" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayoutII"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/rounded_background_setting"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayoutI">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/settingRvII"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:listitem="@layout/setting_rv_item"
+                        android:paddingBottom="@dimen/_20sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+              <!--  <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayoutII" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

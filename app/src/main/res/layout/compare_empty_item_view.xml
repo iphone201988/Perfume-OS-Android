@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:minHeight="@dimen/_500sdp"
+        android:background="@drawable/bg_stroke_35"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_stroke_white_70"
+                android:backgroundTint="@color/bgWhiteFill70_100"
+                android:paddingVertical="@dimen/_30sdp">
+
+                <ImageView
+                    android:id="@+id/imagePerfume"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitCenter"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/add_perfume_icon" />
+
+                <ImageView
+                    android:id="@+id/iv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitCenter"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/ic_add" />
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="selectTap"
+            type="Integer" />
+
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.utils.BaseCustomDialog.Listener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/flTabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp">
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:blurOverlayColor="@color/colorOverlay"
+            >
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- <FrameLayout
+                     android:id="@+id/flTabs"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="@drawable/bg_stroke_white_55"
+
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent">-->
+
+
+                <!--<eightbitlab.com.blurview.BlurView
+                    android:id="@+id/blurView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:blurOverlayColor="#B3FFFFFF">-->
+
+
+                <ImageView
+                    android:id="@+id/ivClose"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:onClick="@{v-> callback.onViewClick(v)}"
+                    android:src="@drawable/icon_solid_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_review_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:fontFamily="@font/alice_regular"
+                    android:gravity="center"
+                    android:text="@string/write_a_review"
+                    android:textColor="@color/gradient1"
+                    android:textSize="@dimen/_22ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivClose"
+
+                    />
+
+
+
+                <EditText
+                    android:id="@+id/et_review_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+
+                    android:background="@drawable/rounded_rectangle_background3"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/alice_regular"
+                    android:gravity="start"
+                    android:hint="@string/review_title"
+
+                    android:maxLines="1"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="@color/text_secondary_color"
+                    android:textColorHint="@color/color_username_home"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_review_label" />
+
+
+              <!--  <TextView
+                    android:id="@+id/spinnerTab"
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/rounded_rectangle_background3"
+                    android:backgroundTint="@color/white"
+                    android:gravity="start"
+                    android:onClick="@{v-> callback.onViewClick(v)}"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_30sdp"
+                    android:text="My Collection (0)"
+                    android:textColor="@color/text_secondary_color"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_review_title" />-->
+
+               <!-- <ImageView
+                    android:id="@+id/ivDrop"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:rotation="90"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/ic_arrow_forward"
+                    app:layout_constraintBottom_toBottomOf="@+id/spinnerTab"
+                    app:layout_constraintStart_toStartOf="@+id/spinnerTab"
+                    app:layout_constraintTop_toTopOf="@+id/spinnerTab"
+                    app:tint="@color/text_secondary_color" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/et_review_title">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_rectangle_background3"
+                        android:backgroundTint="@color/white"
+                        android:visibility="gone"
+                        android:layout_gravity="center"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/spinner_item_view" />
+
+                    <TextView
+                        android:id="@+id/tv_Longevity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/CustomAliceTextview"
+                        android:text="Longevity"
+                        android:textColor="@color/gradient1"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivClose"
+
+                        />
+
+
+                    <com.tech.perfumos.utils.seekbar.TickSeekBar
+                        android:id="@+id/skLongevity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:tsb_progress="0"
+                        app:tsb_show_tick_marks_type="oval"
+                        app:tsb_show_tick_texts="below"
+                        app:tsb_thumb_drawable="@drawable/slider_thumb"
+                        app:tsb_thumb_size="@dimen/_20sdp"
+                        app:tsb_tick_marks_drawable="@drawable/bg_tick_marks"
+                        app:tsb_tick_texts_color="@color/headerColor"
+                        app:tsb_tick_texts_fontFamily="@font/alice_regular"
+                        app:tsb_tick_texts_size="@dimen/_8ssp"
+                        app:tsb_ticks_count="10"
+                        android:layout_gravity="center"
+                        app:tsb_track_background_color="@color/headerColor30"
+                        app:tsb_track_background_size="@dimen/_3sdp"
+                        app:tsb_track_progress_color="@color/headerColor30"
+                        app:tsb_track_progress_size="@dimen/_3sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_Sillage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/CustomAliceTextview"
+                        android:text="Sillage"
+                        android:textColor="@color/gradient1"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivClose"
+
+                        />
+
+                    <com.tech.perfumos.utils.seekbar.TickSeekBar
+                        android:id="@+id/skSillAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:tsb_progress="0"
+                        app:tsb_show_tick_marks_type="oval"
+                        app:tsb_show_tick_texts="below"
+                        app:tsb_thumb_drawable="@drawable/slider_thumb"
+                        app:tsb_thumb_size="@dimen/_20sdp"
+                        app:tsb_tick_marks_drawable="@drawable/bg_tick_marks"
+                        app:tsb_tick_texts_color="@color/headerColor"
+                        app:tsb_tick_texts_fontFamily="@font/alice_regular"
+                        app:tsb_tick_texts_size="@dimen/_8ssp"
+                        app:tsb_ticks_count="10"
+                        android:layout_gravity="center"
+                        app:tsb_track_background_color="@color/headerColor30"
+                        app:tsb_track_background_size="@dimen/_3sdp"
+                        app:tsb_track_progress_color="@color/headerColor30"
+                        app:tsb_track_progress_size="@dimen/_3sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_Gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/CustomAliceTextview"
+                        android:text="Gender"
+                        android:textColor="@color/gradient1"
+                        android:textSize="@dimen/_12ssp"
+
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivClose"
+
+                        />
+
+                    <com.tech.perfumos.utils.seekbar.TickSeekBar
+                        android:id="@+id/skGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:tsb_progress="0"
+                        app:tsb_show_tick_marks_type="oval"
+                        app:tsb_show_tick_texts="below"
+                        app:tsb_thumb_drawable="@drawable/slider_thumb"
+                        app:tsb_thumb_size="@dimen/_20sdp"
+                        app:tsb_tick_marks_drawable="@drawable/bg_tick_marks"
+                        app:tsb_tick_texts_color="@color/headerColor"
+                        app:tsb_tick_texts_fontFamily="@font/alice_regular"
+                        app:tsb_tick_texts_size="@dimen/_8ssp"
+                        app:tsb_ticks_count="10"
+                        android:layout_gravity="center"
+                        app:tsb_track_background_color="@color/headerColor30"
+                        app:tsb_track_background_size="@dimen/_3sdp"
+                        app:tsb_track_progress_color="@color/headerColor30"
+                        app:tsb_track_progress_size="@dimen/_3sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_Price_Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/CustomAliceTextview"
+                        android:text="Price Value"
+                        android:textColor="@color/gradient1"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivClose"
+
+                        />
+                    <com.tech.perfumos.utils.seekbar.TickSeekBar
+                        android:id="@+id/skPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:tsb_progress="0"
+                        app:tsb_show_tick_marks_type="oval"
+                        app:tsb_show_tick_texts="below"
+                        app:tsb_thumb_drawable="@drawable/slider_thumb"
+                        app:tsb_thumb_size="@dimen/_20sdp"
+                        app:tsb_tick_marks_drawable="@drawable/bg_tick_marks"
+                        app:tsb_tick_texts_color="@color/headerColor"
+                        app:tsb_tick_texts_fontFamily="@font/alice_regular"
+                        app:tsb_tick_texts_size="@dimen/_8ssp"
+                        app:tsb_ticks_count="10"
+                        android:layout_gravity="center"
+                        app:tsb_track_background_color="@color/headerColor30"
+                        app:tsb_track_background_size="@dimen/_3sdp"
+                        app:tsb_track_progress_color="@color/headerColor30"
+                        app:tsb_track_progress_size="@dimen/_3sdp" />
+
+                    <EditText
+                        android:id="@+id/tv_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/rounded_rectangle_background3"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="start"
+                        android:layout_gravity="center"
+                        android:hint="Dior Sauvage is a men's fragrance released in 2015, described as a bold and sensual scent inspired by wide-open spaces like a blue sky and a rocky landscape"
+                        android:maxLines="10"
+                        android:minLines="8"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/text_secondary_color"
+                        android:textColorHint="@color/color_username_home"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        style="?android:attr/ratingBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:numStars="5"
+                        android:progressBackgroundTint="#FFD3A9"
+                        android:progressTint="#F7871B"
+                        android:rating="1.5"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:stepSize="0.5"
+                        android:layout_gravity="center"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_review_label"
+                        app:layout_constraintStart_toStartOf="@+id/tv_review_label"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_review_label" />
+
+                    <TextView
+                        android:id="@+id/tv_write_review"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/layout_gradient_onboarding_rv"
+                        android:backgroundTint="@color/gradient1"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="center"
+                        android:onClick="@{v-> callback.onViewClick(v)}"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:text="@string/publish_review"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
+
+
+
+                </LinearLayout>
+
+                <!-- </eightbitlab.com.blurview.BlurView>-->
+                <!-- </FrameLayout>-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </eightbitlab.com.blurview.BlurView>
+    </androidx.cardview.widget.CardView>
+
+</layout>

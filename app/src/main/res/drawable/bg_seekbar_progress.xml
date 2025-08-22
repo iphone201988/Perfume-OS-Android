@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!--<item
+        android:id="@android:id/background"
+        android:drawable="@drawable/round_seek_progress" >
+       &lt;!&ndash; <padding android:bottom="1dp"/>&ndash;&gt;
+    </item>-->
+
+    <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/bg_seek_white_progress" >
+        <!-- <padding android:bottom="1dp"/>-->
+    </item>
+
+    <item
+        android:id="@android:id/progress" >
+        <clip
+            android:drawable="@drawable/seekbar_progress"
+            />
+    </item>
+</layer-list>

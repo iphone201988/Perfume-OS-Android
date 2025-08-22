@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.auth_folder.login_folder.LoginActivityVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.auth_folder.login_folder.LoginActivity">
+
+
+         <!--   <com.tech.perfumos.utils.BgAnimation
+            android:id="@+id/waveView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false" />-->
+
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:src="@drawable/glass"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/_67sdp"
+                android:layout_height="@dimen/_67sdp"
+                android:layout_marginStart="-40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/login_ruby"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_85sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hatman_login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.84" />
+
+            <ImageView
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="-45dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/red_pot_login"
+                app:layout_constraintBottom_toTopOf="@+id/guideline2"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="@dimen/_96sdp"
+                android:layout_height="@dimen/_96sdp"
+                android:layout_marginStart="-60dp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/yellow_diamond_login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="-55dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pot_loging"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:fitsSystemWindows="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/shapeableImageView"
+                        android:layout_width="@dimen/_103sdp"
+                        android:layout_height="@dimen/_103sdp"
+                        android:layout_marginTop="@dimen/_90sdp"
+                        android:src="@drawable/app_logo_splash"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/gradientTextView"-->
+                    <!--                        style="@style/CustomAliceTextview"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginEnd="@dimen/_30sdp"-->
+                    <!--                        android:gravity="end"-->
+                    <!--                        android:text="Perfum"-->
+                    <!--                        android:textColor="@color/splash_textview"-->
+                    <!--                        android:textSize="@dimen/_17sdp"-->
+                    <!--                        android:textStyle="normal"-->
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintHorizontal_weight="3"-->
+                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/osTextview"-->
+                    <!--                        style="@style/CustomAliceTextview"-->
+                    <!--                        textGradient='@{"OS"}'-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:gravity="start"-->
+                    <!--                        android:paddingStart="@dimen/_2sdp"-->
+                    <!--                        android:textSize="@dimen/_17sdp"-->
+                    <!--                        android:textStyle="normal"-->
+                    <!--                        app:layout_constraintHorizontal_weight="3"-->
+                    <!--                        app:layout_constraintStart_toEndOf="@+id/gradientTextView"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />-->
+                    <ImageView
+
+                        android:id="@+id/gradientTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/perfum_os_logo_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/username"
+                        style="@style/CustomAliceEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginHorizontal="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/changepass_background"
+                        android:gravity="start|center"
+                        android:hint="@string/username"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:nextFocusForward="@id/otpET2"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:textColor="@color/app_black"
+
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/gradientTextView" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/password"
+                        style="@style/CustomAliceEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginHorizontal="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/changepass_background"
+                        android:gravity="start|center"
+                        android:hint="@string/password"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:nextFocusForward="@id/otpET2"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:textColor="@color/app_black"
+                        android:textSize="@dimen/_10ssp"
+                        android:paddingEnd="@dimen/_35sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+                    <ImageView
+                        android:id="@+id/ivShow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:src="@drawable/icon_eye"
+                        android:onClick="@{v-> vm.onClick(v)}"
+                        app:layout_constraintBottom_toBottomOf="@+id/password"
+                        app:layout_constraintEnd_toEndOf="@+id/password"
+                        app:layout_constraintTop_toTopOf="@+id/password" />
+
+                    <TextView
+                        android:id="@+id/forgetPassword"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:onClick="@{v-> vm.onClick(v)}"
+                        android:text="@string/forgot_password_without"
+                        android:textColor="@color/color_forget_pass"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toEndOf="@+id/password"
+                        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+
+                    <LinearLayout
+                        android:id="@+id/loginButton"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginHorizontal="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/gradient_background"
+                        android:onClick="@{v ->vm.onClick(v)}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/forgetPassword">
+
+                        <TextView
+
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/login"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_16sdp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/createNewAccount"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:onClick="@{v-> vm.onClick(v)}"
+                        android:text="@string/create_new_account"
+                        android:textColor="@color/select_dot_indicator"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toEndOf="@+id/loginButton"
+                        app:layout_constraintStart_toStartOf="@+id/loginButton"
+                        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+
+                    <TextView
+                        android:id="@+id/orContinueWith"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="@string/or_continue_with"
+                        android:textColor="@color/color_username_home"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="normal"
+                        app:layout_constraintEnd_toEndOf="@+id/loginButton"
+                        app:layout_constraintStart_toStartOf="@+id/loginButton"
+                        app:layout_constraintTop_toBottomOf="@+id/createNewAccount" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/orContinueWith">
+
+                        <LinearLayout
+                            android:id="@+id/google_id_card"
+                            android:layout_width="@dimen/_55sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:background="@drawable/rounded_background_login"
+                            android:onClick="@{v-> vm.onClick(v)}"
+                            app:cardBackgroundColor="@color/white_30"
+                            app:cardCornerRadius="@dimen/_7sdp"
+                            app:cardElevation="@dimen/_1sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/facebook_id_card"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_12sdp"
+                                android:src="@drawable/google_icon" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/facebook_id_card"
+                            android:layout_width="@dimen/_55sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:background="@drawable/rounded_background_login"
+                            android:onClick="@{v-> vm.onClick(v)}"
+                            app:cardBackgroundColor="@color/white_30"
+                            app:cardCornerRadius="@dimen/_7sdp"
+                            app:cardElevation="@dimen/_1sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/tiktok_id_card"
+                            app:layout_constraintStart_toEndOf="@+id/google_id_card"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_12sdp"
+                                android:src="@drawable/face_book" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tiktok_id_card"
+                            android:layout_width="@dimen/_55sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:background="@drawable/rounded_background_login"
+                            android:onClick="@{v-> vm.onClick(v)}"
+                            app:cardBackgroundColor="@color/white_30"
+                            app:cardCornerRadius="@dimen/_7sdp"
+                            app:cardElevation="@dimen/_1sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/facebook_id_card"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_12sdp"
+                                android:src="@drawable/tiktok" />
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

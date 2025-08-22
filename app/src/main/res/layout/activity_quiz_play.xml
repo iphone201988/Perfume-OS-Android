@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.quiz.QuizVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.quiz.QuizPlayActivity">
+
+    <ImageView
+        android:id="@+id/bg_anim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/glass" />
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:onClick="@{v-> vm.onClick(v)}"
+        android:src="@drawable/ic_back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headingTitle"
+        style="@style/CustomAliceTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:gravity="center"
+        android:text="@string/quiz"
+        android:textColor="@color/headerColor1"
+        android:textSize="@dimen/_18ssp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_btn"
+        tools:layout_editor_absoluteX="13dp">
+
+        <TextView
+            android:id="@+id/tvQuesCount"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="2/12"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:paddingStart="@dimen/_5sdp"
+
+            />
+
+        <com.tech.perfumos.utils.CustomGradientSeekBar
+            android:id="@+id/skProgress"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:max="100"
+            android:progress="20"
+            app:cornerRadius="70dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuesCount"
+            app:progressGradientEndColor="#67E9E9"
+            app:progressGradientStartColor="#5349CE"
+            app:seekBackgroundColor="@color/main_seek_bar"
+            app:seekEnable="false"
+            app:progressShadow="true"
+            app:thumbColorEnd="#66DDE7"
+            app:thumbColorStart="#66DDE7"
+            app:thumbSize="0dp"
+            app:thumbStrokeColor="#95F5FF"
+            app:trackHeight="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            />
+
+
+        <TextView
+            android:id="@+id/tvQues"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center"
+            android:text="@string/players_have_joined"
+            android:textColor="@color/headerColor"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/skProgress"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAns"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_1sdp"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            app:layout_constraintTop_toBottomOf="@+id/tvQues"
+            tools:listitem="@layout/ans_item_view"
+            android:paddingBottom="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvWrongAnsLabel"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_5sdp"
+            android:text="@string/incorrect_answer"
+            android:textColor="@color/wrong_color"
+            android:textSize="@dimen/_10ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/tvNext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvNext"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:background="@drawable/bg_rounded_storke"
+            android:gravity="center"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@string/next"
+            android:textColor="@color/headerColor"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_20sdp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

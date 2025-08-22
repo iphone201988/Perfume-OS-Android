@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.quiz.QuizVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.quiz.JoinGameActivity">
+
+    <ImageView
+        android:id="@+id/bg_anim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/glass" />
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:onClick="@{v-> vm.onClick(v)}"
+        android:src="@drawable/ic_back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headingTitle"
+        style="@style/CustomAliceTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:gravity="center"
+        android:text="@string/join_game"
+        android:textColor="@color/headerColor1"
+        android:textSize="@dimen/_18ssp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_btn"
+        tools:layout_editor_absoluteX="13dp">
+
+        <TextView
+            android:id="@+id/tvPin"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_rounded_white_storke"
+            app:backgroundTint="@color/headerColor"
+            android:gravity="center"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@string/enter_pin"
+
+            android:textSize="@dimen/_10ssp"
+
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvScanQr"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvScanQr"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+
+            android:background="@drawable/bg_rounded_storke"
+            android:gravity="center"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@string/scan_qr_code"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintTop_toTopOf="@+id/tvPin"
+            android:textColor="@color/headerColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvPin" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@+id/tvJoinGame"
+            app:layout_constraintTop_toBottomOf="@+id/tvScanQr"
+            android:paddingTop="@dimen/_30sdp"
+            android:paddingBottom="@dimen/_20sdp"
+            >
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ivLogo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@drawable/bg_quiz_large"
+                android:layout_marginTop="-35dp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingTop="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_20sdp"
+                >
+                <TextView
+                    android:id="@+id/tvEnterCodeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/enter_pin_to_join_game_or_scan_qr_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    style="@style/CustomAliceTextview"
+                    android:textSize="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:textColor="@color/headerColor"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edPin"
+                    style="@style/CustomAliceEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/article_content_drawable"
+                    android:gravity="center"
+                    android:hint="@string/enter_pin"
+                    android:paddingVertical="@dimen/_15sdp"
+                    android:inputType="number"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/_14ssp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEnterCodeTitle"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_200sdp"
+                android:src="@drawable/icon_wizard_full_logo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvJoinGame"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_rounded_white_storke"
+            android:gravity="center"
+            android:onClick="@{v->vm.onClick(v)}"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@string/join_now"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            app:backgroundTint="@color/headerColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

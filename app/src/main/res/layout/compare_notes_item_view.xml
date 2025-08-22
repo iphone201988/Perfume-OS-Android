@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivNote"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_3sdp"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+                android:src="@drawable/floral_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tvNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_toEndOf="@+id/ivNote"
+                android:fontFamily="@font/alice_regular"
+                android:gravity="start"
+                android:minEms="5"
+                android:textColor="@color/text_secondary_color"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintTop_toTopOf="@+id/ivNote"
+                app:layout_constraintStart_toEndOf="@+id/ivNote"
+                app:layout_constraintBottom_toBottomOf="@+id/ivNote"
+                />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

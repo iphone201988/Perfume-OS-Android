@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.review.ReviewVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.camera_perfume.PerfumeInfoActivity">
+
+
+        <!--   <com.tech.perfumos.utils.BgAnimation
+           android:id="@+id/waveView"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:clipChildren="false" />-->
+
+
+        <ImageView
+            android:id="@+id/bg_anim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/glass" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_210sdp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/guide1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/perfumeImg"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_210sdp"
+            app:layout_constraintBottom_toTopOf="@+id/guide1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/bg_shade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_img_shade"
+            app:layout_constraintBottom_toBottomOf="@+id/perfumeImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:onClick="@{v-> vm.onClick(v)}"
+            android:src="@drawable/ic_back_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.65" />
+
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/CustomManropBoldTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:fontFamily="@font/alice_regular"
+            android:gravity="start"
+            android:maxLines="3"
+            android:text="@string/sauvage"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toTopOf="@+id/tvType"
+            app:layout_constraintEnd_toStartOf="@+id/tvAddCollection"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:fontFamily="@font/alice_regular"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="@string/dior"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/perfumeImg"
+            app:layout_constraintEnd_toEndOf="@+id/tvName"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAddCollection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_textview_blue_storke"
+            android:fontFamily="@font/alice_regular"
+            android:gravity="center"
+            android:visibility="gone"
+            android:onClick="@{v-> vm.onClick(v)}"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:text="@string/add_to_collection"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/perfumeImg"
+            app:layout_constraintEnd_toStartOf="@+id/tvAddWishlist" />
+
+        <TextView
+            android:id="@+id/tvAddWishlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_text_view_frame"
+            android:fontFamily="@font/alice_regular"
+            android:gravity="center"
+            android:onClick="@{v-> vm.onClick(v)}"
+            android:paddingHorizontal="@dimen/_2sdp"
+            android:text="@string/add_to_wishlist"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/perfumeImg"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_compare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:onClick="@{v-> vm.onClick(v)}"
+            android:src="@drawable/icon_compare"
+            app:layout_constraintBottom_toTopOf="@+id/tvAddWishlist"
+            app:layout_constraintEnd_toEndOf="@+id/tvAddWishlist" />
+
+
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/bg_stroke_35"
+                    android:padding="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/bg_shade">
+
+                    <TextView
+                        android:id="@+id/tv_review_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableLeft="@drawable/ic_message"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="center"
+                        android:text="@string/reviews"
+                        android:textColor="@color/text_secondary_color"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="center"
+                        android:text="4.6"
+                        android:textColor="@color/themeTextView"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_review"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_review"
+                        app:layout_constraintTop_toTopOf="@id/tv_review" />
+
+                    <TextView
+                        android:id="@+id/tv_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/bg_rounded_rating_card_item"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/_5sdp"
+                        android:paddingVertical="@dimen/_2sdp"
+                        android:text="322+ reviews"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_review_label"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_review_label" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_review"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_review_label"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_write_review"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/review_item_card"
+                        tools:itemCount="4" />
+
+                    <TextView
+                        android:id="@+id/tv_write_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/layout_gradient_onboarding_rv"
+                        android:backgroundTint="@color/gradient1"
+                        android:fontFamily="@font/alice_regular"
+                        android:onClick="@{v -> vm.onClick(v)}"
+                        android:paddingHorizontal="@dimen/_20sdp"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:text="@string/write_a_review"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

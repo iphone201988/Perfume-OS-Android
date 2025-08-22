@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.profile_folder.UserReview" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+
+        android:background="@drawable/rounded_rectangle_background3"
+        android:padding="@dimen/_15sdp">
+
+        <LinearLayout
+            android:id="@+id/initialLetter"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:authorImage="@{bean.perfumeId.image}"
+                app:authorName="@{bean.perfumeId.name}"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/discLL"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/_10sdp"
+            app:layout_constraintEnd_toStartOf="@+id/ratingBar"
+            app:layout_constraintTop_toTopOf="@+id/initialLetter"
+            app:layout_constraintStart_toEndOf="@+id/initialLetter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nameUser"
+                style="@style/CustomAliceTextview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:text="@{bean.perfumeId.name}"
+                android:textColor="@color/headerColor"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/CustomAliceTextview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="@{bean.title == null ? View.GONE : View.VISIBLE}"
+                android:textStyle="italic"
+                android:text="@{bean.title}"
+                tools:text="Awesome smell, recommended brand!"
+                />
+
+            <TextView
+                android:id="@+id/reviewDis"
+                style="@style/CustomAliceTextview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                tools:text="Awesome smell, recommended brand!"
+                android:textColor="@color/grey_app"
+                android:textSize="@dimen/_11ssp"
+                android:maxLines="5"
+                android:text="@{bean.review}"
+                android:textStyle="normal" />
+
+           <!-- <TextView
+                android:id="@+id/nameUser"
+                style="@style/CustomAliceTextview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:text="@{bean.perfumeId.name}"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="normal" />
+            <TextView
+                android:id="@+id/reviewDis"
+                style="@style/CustomAliceTextview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                tools:text="Awesome smell, recommended brand!"
+                android:text="@{bean.review}"
+                android:textColor="@color/grey_app"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="normal" />-->
+        </LinearLayout>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rating="1"
+            setRating="@{bean.rating}"
+            android:stepSize="1"
+            android:numStars="5"
+            android:progressBackgroundTint="#FFD3A9"
+            android:progressTint="#F7871B"
+            app:layout_constraintBottom_toBottomOf="@+id/discLL"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/discLL"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

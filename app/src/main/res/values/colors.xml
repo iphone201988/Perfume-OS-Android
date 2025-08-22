@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#0274B0</color>
+    <color name="purple_700">#0274B0</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="black_light">#292D32</color>
+    <color name="grey">#A9CDC6C6</color>
+    <color name="text_light">#8B8B8F</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#DDA625</color>
+    <color name="text_hint_color">#8D99B9</color>
+    <color name="bg_text">#cce3ef</color>
+    <color name="white_90">#F2FFFFFF</color>
+    <color name="colorPrimary">#0274B0</color>
+    <color name="colorPrimaryDark">#0274B0</color>
+    <color name="colorAccent">#006AFA</color>
+    <color name="colorAccentDark">#013883</color>
+    <color name="text_color">#786AA7</color>
+    <color name="edit_back_color">#F3F0FF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="background">#dddddd</color>
+    <color name="light_red">#FF8D83</color>
+    <color name="red_color">#ED0606</color>
+    <color name="blue">#495C8F</color>
+    <color name="dark_blue">#2F3B5B</color>
+
+
+<!-- COLOR WHICH USE IN OUR APP -->
+    <color name="background_app">#FFFFFF</color>
+    <color name="background_color_general">#FCFCFC</color>
+    <color name="splash_textview">#352AA4</color>
+    <color name="splash_gradient_first">#4896FF</color>
+    <color name="splash_gradient_second">#15C8C9</color>
+    <color name="themeTextView">#2C2D3D</color>
+    <color name="themeTextView1">#2C2D3D</color>
+    <color name="TvBlack60">#99222222</color>
+    <color name="TvSearchBlack">#222222</color>
+    <color name="themeTextView20">#332C2D3D</color>
+    <color name="select_dot_indicator">#006AFA</color>
+
+    <color name="unselect_dot_indicator">#D9D9D9</color>
+    <color name="heading_color">#006AFA</color>
+    <color name="heading_color_sub">#575757</color>
+    <color name="heading_color_sub1">#575757</color>
+    <color name="tv_sub_text">#575757</color>
+    <color name="app_black">#222222</color>
+    <color name="main_seek_bar">#BABABA</color>
+    <color name="select_color">#4B74C5</color>
+    <color name="pink_color">#BB2DC6</color>
+    <color name="secondary_dark">#2F4A89</color>
+    <color name="text_secondary_color">#1B1C2C</color>
+    <color name="text_secondary_color1">#1B1C2C</color>
+    <color name="gray">#666666</color>
+    <color name="gray_60">#99EBEBEB</color>
+    <color name="unselected_color">#662C2D3D</color>
+    <color name="gradient1">#004096</color>
+    <color name="gradient2">#15C8C9</color>
+    <color name="home_heading">#111116</color>
+    <color name="home_welcome_txt">#2C2D3D</color>
+    <color name="search_stroke">#E3E3E3</color>
+    <color name="color_username_home">#6E6E6E</color>
+    <color name="home_complete_tutorial">#F7F7F7</color>
+    <color name="boarder_profile">#013883</color>
+    <color name="boarder_profile_unselected">#99013883</color>
+    <color name="card_color">#5349CE</color>
+    <color name="card_stroke_color">#FFFFFF</color>
+    <color name="card_profile_review">#5D5DFF</color>
+    <color name="dark">#050505</color>
+    <color name="grey_app">#868686</color>
+    <color name="bg_grey">#B9B9B9</color>
+    <color name="chat_color">#13A6A7</color>
+    <color name="chat_left_color">#EEEEEE</color>
+    <color name="text_color_chat_receiver">#505050</color>
+    <color name="chat_send_edittext">#A1A1A1</color>
+
+    <color name="select_dot_indicator_divider">#d9e0e7</color>
+    <color name="custom_drawable">#2563EB</color>
+    <color name="custom_drawable_unselected">#dadada</color>
+    <color name="custom_text_color">#8391A1</color>
+    <color name="color_forget_pass">#122259</color>
+    <color name="white_30">#4DFFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+
+    <color name="bottom_bar_color">#FFFFFF</color>
+    <color name="storke_white">#FFFFFFFF</color>
+    <color name="tv_white">#FFFFFF</color>
+    <!--<color name="search_icon_color">#22222299</color>-->
+    <color name="search_icon_color">#99222222</color>
+    <color name="search_fill">#FFFFFF</color>
+    <color name="tv_bg_fill">#4DFFFFFF</color>
+
+    <!--text-->
+    <color name="text_unselected">#AEB1D7</color>
+    <color name="textViewH1">#FFFFFF</color>
+    <color name="subtextH1">#FFFFFF</color>
+    <color name="headerColor">#004096</color>
+    <color name="headerColor30">#4D004096</color>
+    <color name="headerColor60">#99004096</color>
+    <color name="headerColor1">#575757</color>
+    <color name="headerColor2">#6B6B6B</color>
+
+    <color name="sub_text_color">#363636</color>
+    <color name="sub_text_color1">#475569</color>
+    <color name="sub_text_color2">#2B2B2B</color>
+
+    <color name="btnTextColor">#DBEAFF</color>
+    <color name="btnTextColor0">#122259</color>
+
+    <color name="hintColor">#EBEBEB</color>
+    <color name="ed_text_color">#EBEBEB</color>
+
+    <color name="text_color1">#2E70E8</color>
+    <color name="text_color2">#FFFFFF</color>
+
+    <color name="trophy_color1">#004096</color>
+    <color name="trophy_color2">#006AFA</color>
+    <color name="trophy_color3">#4896FF</color>
+    <color name="trophy_color">#004896FF</color>
+    <color name="Pass_color">#59F67B</color>
+    <color name="wrong_color">#F6595A</color>
+
+
+    <color name="unselect_text">#9A222222</color>
+    <color name="leader_text_color">#352AA4</color>
+    <color name="male_selection">#006AFA</color>
+    <color name="female_selection">#E024FF</color>
+
+    <color name="unselect_tab_text">#64748B</color>
+    <color name="select_tab_text">#1E293B</color>
+
+    <color name="tab_count">#334155</color>
+
+    <color name="profile_section_selected">#006AFA</color>
+    <color name="profile_section_unselected">#6E6E6E</color>
+
+    <color name="colorOverlay">#78ffffff</color>
+    <color name="colorOverlayDialog">#8DFFFFFF</color>
+    <color name="colorOverlayFav">#8C006AFA</color>
+
+    <color name="switch_thumb">#FFFFFF</color>
+    <!--seekbar color-->
+    <color name="thumb1">#53A1D8</color>
+    <color name="thumb2">#79CD0B</color>
+    <color name="thumb3">#F3B55C</color>
+    <color name="thumb4">#E82C91</color>
+    <color name="thumb5">#F49550</color>
+    <color name="thumb6">#A43DDB</color>
+    <color name="thumb7">#EAED69</color>
+    <color name="thumb8">#EA61FF</color>
+    <color name="thumb9">#F08466</color>
+
+    <color name="colorAccent80">#CB006AFA</color>
+
+    <color name="text_color_tuitorial">#99F7F7F7</color>
+    <color name="color_divider">#2C2D3D</color>
+    <color name="bgStrokeFill30_50">#59FFFFFF</color>
+    <color name="bgStrokeFill35_50">#59FFFFFF</color>
+
+    <color name="bgWhiteFill70_100">#B3FFFFFF</color>
+
+    <color name="bgRoundedRecFill">#B3FFFFFF</color>
+    <color name="bgRoundedRecStroke">#F7F7F7</color>
+
+
+    <color name="bgRec3Fill">#FFFFFF</color>
+    <color name="bgRec3Stroke">#EFEFEF</color>
+
+    <color name="bgSettingFill">#cbced3</color>
+
+
+    <!--Articles fragment-->
+    <color name="article_drawable_fill">#FFFFFF</color>
+    <color name="article_drawable_stroke">#EFEFEF</color>
+    <!--Articles fragment-->
+
+    <!--profile fragment-->
+    <color name="itemDecorate">#A8D7D9</color>
+    <color name="itemDecorate0">#E6FEFF</color>
+    <color name="itemDecorate1">#B9E1E3</color>
+    <color name="itemDecorate2">#BCE4E5</color>
+    <!--profile fragment-->
+
+
+</resources>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainViewParent"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:id="@+id/spotlight_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+
+        <ImageView
+            android:id="@+id/backBottom"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:src="@drawable/onboarding_tuitorial_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/countValue"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/9"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/backBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/backBottom" />
+
+        <ImageView
+            android:id="@+id/back_next_icon"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/back_next_icon_grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textBack"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/back_next_icon"
+            app:layout_constraintStart_toStartOf="@+id/back_next_icon"
+            app:layout_constraintTop_toBottomOf="@+id/back_next_icon" />
+
+        <ImageView
+            android:id="@+id/next_icon"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:src="@drawable/next_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/endTutorial"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/snap_light_drawable"
+            android:paddingHorizontal="@dimen/_25sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="End Tutorial"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_8ssp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/next_icon"
+            app:layout_constraintStart_toEndOf="@+id/back_next_icon"
+            app:layout_constraintTop_toTopOf="@+id/back_next_icon" />
+
+        <TextView
+            android:id="@+id/textNext"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/next_icon"
+            app:layout_constraintStart_toStartOf="@+id/next_icon"
+            app:layout_constraintTop_toBottomOf="@+id/next_icon" />
+
+
+        <LinearLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/animationGifTop"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/down_arrow"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/mainLayout"
+                app:layout_constraintStart_toStartOf="@+id/mainLayout"
+                app:layout_constraintTop_toBottomOf="@+id/mainLayout" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gifUp"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:rotation="180"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/down_arrow" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <com.tech.perfumos.utils.GradientStrokeView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/secondaryLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:paddingVertical="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/firstText"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Snap or upload a photo of a"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:id="@+id/secondText"
+                        style="@style/CustomAliceTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="perfume bottle to get information"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gifDown"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/down_arrow"
+                app:layout_constraintEnd_toEndOf="@+id/mainLayout"
+                app:layout_constraintStart_toStartOf="@+id/mainLayout"
+                app:layout_constraintTop_toBottomOf="@+id/mainLayout" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/animationGif"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/down_arrow"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/mainLayout"
+                app:layout_constraintStart_toStartOf="@+id/mainLayout"
+                app:layout_constraintTop_toBottomOf="@+id/mainLayout" />
+        </LinearLayout>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifDown2"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/down_arrow"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/mainLayout"
+            app:layout_constraintStart_toStartOf="@+id/mainLayout"
+            app:layout_constraintTop_toBottomOf="@+id/mainLayout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/congratulationsCC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.tech.perfumos.utils.GradientStrokeView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_20sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gifCongratulations"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/congratulations_gif"
+                app:layout_constraintBottom_toTopOf="@+id/congratulationsTv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iconCongratulations"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:src="@drawable/complete_tutorial_icon_new"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/congratulationsTv"
+                style="@style/CustomAliceTextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+
+                android:text="Congratulations on
+completing the the tutorial"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintTop_toBottomOf="@+id/iconCongratulations" />
+
+            <TextView
+                android:id="@+id/homeBack"
+                style="@style/CustomAliceTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/snap_light_drawable"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="Back to Homepage"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/congratulationsTv" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintTop_toBottomOf="@+id/homeBack" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

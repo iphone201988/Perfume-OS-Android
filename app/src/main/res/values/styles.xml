@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomAliceTextview" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/alice_regular</item>
+    </style>
+    <style name="CustomManropTextview" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/manrope_regular</item>
+    </style>
+    <style name="CustomManropBoldTextview" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/manrope_bold</item>
+    </style>
+    <style name="CustomManropMediumTextview" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/manrope_medium</item>
+    </style>
+    <style name="CustomManropSemiBoldTextview" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/manrope_semi_bold</item>
+    </style>
+
+    <style name="CustomInterTextview" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="Floating" parent="Widget.Design.FloatingActionButton">
+        <item name="android:foreground">@drawable/camera_icon</item>
+    </style>
+    <style name="CustomAliceEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/alice_regular</item>
+        <item name="android:textColor">@color/themeTextView</item>
+    </style>
+    <style name="CustomUrbanistEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/urbanist_bold</item>
+    </style>
+    <style name="CustomManropBoldEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/manrope_bold</item>
+    </style>
+    <style name="CornerSize70Percent" parent="">
+        <item name="cornerSize">70%</item>
+    </style>
+    <style name="CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="CornerSize20Percent" parent="">
+        <item name="cornerSize">43%</item>
+    </style>
+    <style name="CornerSize7Percent" parent="">
+        <item name="cornerSize">7%</item>
+    </style>
+    <style name="CornerBottom7Percent" parent="">
+        <item name="cornerSizeBottomLeft">8%</item>
+        <item name="cornerSizeBottomRight">8%</item>
+    </style>
+
+    <style name="CustomRatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:maxHeight">48dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.rightCornerSize20" parent="">
+        <item name="cornerSizeBottomRight">20%</item>
+        <item name="cornerSizeTopRight">20%</item>
+    </style>
+
+</resources>

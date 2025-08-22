@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Bottom, Left, and Right White Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <corners
+                android:bottomLeftRadius="@dimen/_40sdp"
+                android:bottomRightRadius="@dimen/_40sdp" />
+        </shape>
+    </item>
+
+    <!-- Main background with inner fill and clipped top (so top stroke is transparent) -->
+    <item
+        android:left="1.5dp"
+        android:right="1.5dp"
+        android:bottom="1.5dp"
+        android:top="0dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/bgStrokeFill35_50" />
+          <!--  <solid android:color="#4DFFFFFF" />-->
+            <corners
+                android:bottomLeftRadius="@dimen/_40sdp"
+                android:bottomRightRadius="@dimen/_40sdp" />
+        </shape>
+    </item>
+
+</layer-list>

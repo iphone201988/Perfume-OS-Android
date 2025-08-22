@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="selectTap"
+            type="Integer" />
+
+
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.dashboad.fragment_folder.profile_folder.ProfileFragmentVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<com.tech.perfumos.utils.BgAnimation
+            android:id="@+id/waveView"
+            android:layout_width="match_parent"
+            android:clipChildren="false"
+            android:layout_height="match_parent" />-->
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            tools:context=".ui.dashboad.fragment_folder.profile_folder.ProfileFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="-20dp"
+                    android:background="@drawable/profile_drawable"
+                    app:layout_constraintBottom_toBottomOf="@+id/rateTextLL"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+
+                    android:id="@+id/notificationIcon"
+                    android:layout_width="@dimen/_19sdp"
+                    android:layout_height="@dimen/_19sdp"
+
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:onClick="@{v-> vm.onClick(v)}"
+                    android:src="@drawable/notifcation_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editProfileIcon" />
+
+                <TextView
+                    android:id="@+id/countNotifcation"
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginEnd="-2dp"
+                    android:background="@drawable/circle_shape"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_6ssp"
+                    android:textStyle="normal"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/notificationIcon"
+
+                    app:layout_constraintTop_toTopOf="@+id/notificationIcon" />
+
+                <ImageView
+
+                    android:id="@+id/settingIcon"
+                    android:layout_width="@dimen/_19sdp"
+                    android:layout_height="@dimen/_19sdp"
+
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:onClick="@{v-> vm.onClick(v)}"
+                    android:src="@drawable/edit_profile"
+                    app:layout_constraintEnd_toStartOf="@+id/editProfileIcon"
+                    app:layout_constraintTop_toTopOf="@+id/editProfileIcon" />
+
+                <ImageView
+
+                    android:id="@+id/editProfileIcon"
+                    android:layout_width="@dimen/_19sdp"
+                    android:layout_height="@dimen/_19sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:onClick="@{v-> vm.onClick(v)}"
+                    android:src="@drawable/setting_home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.tech.perfumos.utils.GradientStrokeImageView2
+                    android:id="@+id/userProfile"
+                    android:layout_width="@dimen/_126sdp"
+                    android:layout_height="@dimen/_126sdp"
+                    android:layout_marginTop="@dimen/_45sdp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/followTv"
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/follow_icon_bag"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_25sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    android:text="Follow"
+                    android:textColor="@color/textViewH1"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="normal"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/userProfile"
+                    app:layout_constraintStart_toStartOf="@+id/userProfile"
+                    app:layout_constraintTop_toBottomOf="@+id/userProfile" />
+
+                <!--<LinearLayout
+                    android:id="@+id/followLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/follow_icon_bag"
+                    android:paddingHorizontal="@dimen/_20sdp"
+                    android:paddingVertical="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/userProfile"
+                    app:layout_constraintStart_toStartOf="@+id/userProfile"
+                    app:layout_constraintTop_toBottomOf="@+id/userProfile">
+
+                </LinearLayout>-->
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    style="@style/CustomAliceTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:textColor="@color/home_heading"
+                    android:textSize="@dimen/_20ssp"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="@+id/userProfile"
+                    app:layout_constraintStart_toStartOf="@+id/userProfile"
+                    app:layout_constraintTop_toBottomOf="@+id/followTv" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/tvUserName"
+                    app:layout_constraintStart_toStartOf="@+id/tvUserName"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUserName">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_5sdp">
+
+                        <ImageView
+                            android:id="@+id/iconLogo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/noise_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+
+                            />
+
+                        <!--<LinearLayout
+
+                            android:id="@+id/iconLogo"
+                            android:layout_width="@dimen/_23sdp"
+                            android:layout_height="@dimen/_23sdp"
+                            android:background="@drawable/circle_background"
+                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="@dimen/_11sdp"
+                                android:layout_height="@dimen/_11sdp"
+                                android:src="@drawable/noise_icon" />
+
+                        </LinearLayout>-->
+                        <!--                textGradient='@{"OS"}'-->
+                        <TextView
+                            android:id="@+id/title"
+                            style="@style/CustomAliceTextview"
+                            textGradient1='@{"Nose Novice"}'
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:textColor="@color/home_heading"
+                            android:textSize="@dimen/_14ssp"
+
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/iconLogo"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/rateTextLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardIcon">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/followingCountTv"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/text_secondary_color"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/FollowingTv"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="Following"
+                            android:textColor="@color/heading_color_sub1"
+                            android:textSize="@dimen/_10ssp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_15sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/followerCountTv"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/text_secondary_color"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/followerTv"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="Followers"
+                            android:textColor="@color/heading_color_sub1"
+                            android:textSize="@dimen/_10ssp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvRankPoint"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/text_secondary_color"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/rateText"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Rank points:"
+                            android:textColor="@color/heading_color_sub1"
+                            android:textSize="@dimen/_10ssp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+               <!-- <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/rounded_rectangle_background"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/item_profile_tabs"
+                    app:layout_constraintTop_toBottomOf="@+id/rvTabs1"/>-->
+
+
+                <TextView
+                    android:id="@+id/spinnerTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_rectangle_background4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="My Collection (0)"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    style="@style/CustomAliceTextview"
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/color_username_home"
+                    android:onClick="@{v-> vm.onClick(v)}" />
+
+                <ImageView
+                    android:id="@+id/ivDrop"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:src="@drawable/ic_arrow_forward"
+                    app:layout_constraintTop_toTopOf="@+id/spinnerTab"
+                    app:layout_constraintBottom_toBottomOf="@+id/spinnerTab"
+                    app:layout_constraintEnd_toEndOf="@id/spinnerTab"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:rotation="90"
+                    app:tint="@color/color_username_home"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/rounded_rectangle_background4"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/spinner_item_view"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/spinnerTab"/>
+
+
+                <LinearLayout
+                    android:id="@+id/contentLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/rvTabs">
+
+                    <TextView
+                        android:id="@+id/noDataFound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="No records found"
+                        android:fontFamily="@font/alice_regular"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/collectionRv"
+                        setSpanCount="@{selectTap == 4 ? 3 : 4}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:nestedScrollingEnabled="false"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:listitem="@layout/collection_item_count" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvBadges"
+                        setSpanCount="@{selectTap == 4 ? 3 : 4}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:nestedScrollingEnabled="false"
+
+                        android:visibility="@{(selectTap == 4) ? View.VISIBLE : View.GONE}"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:listitem="@layout/collection_item_count" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvFavorite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_1sdp"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:visibility="@{(selectTap == 5) ? View.VISIBLE : View.GONE}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/totalCountCard"
+                        tools:listitem="@layout/review_item_card" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/bg_stroke_35"
+                        android:padding="@dimen/_10sdp"
+                        android:visibility="@{(selectTap == 3) ? View.VISIBLE : View.GONE}">
+
+                        <ImageView
+                            android:id="@+id/review_icon"
+                            android:layout_width="@dimen/_13sdp"
+                            android:layout_height="@dimen/_13sdp"
+                            android:src="@drawable/review_icon"
+                            app:layout_constraintBottom_toBottomOf="@+id/totalCountCard"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/totalCountCard" />
+
+                        <TextView
+                            android:id="@+id/reviewsss"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+
+                            android:gravity="center"
+                            android:text="@string/reviews"
+                            android:textColor="@color/themeTextView"
+                            android:textSize="@dimen/_10ssp"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="@+id/totalCountCard"
+                            app:layout_constraintStart_toEndOf="@+id/review_icon"
+                            app:layout_constraintTop_toTopOf="@+id/totalCountCard" />
+
+                        <TextView
+                            android:id="@+id/count"
+                            style="@style/CustomAliceTextview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginEnd="@dimen/_7sdp"
+                            android:gravity="center"
+                            android:text="0.0"
+                            android:textColor="@color/themeTextView"
+                            android:textSize="@dimen/_10ssp"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="@+id/totalCountCard"
+                            app:layout_constraintEnd_toStartOf="@+id/totalCountCard"
+                            app:layout_constraintTop_toTopOf="@+id/totalCountCard" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/totalCountCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_3sdp"
+                            app:cardBackgroundColor="@color/card_color"
+                            app:cardCornerRadius="@dimen/_10sdp"
+                            app:cardElevation="0dp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/totalCount"
+                                style="@style/CustomAliceTextview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_3sdp"
+                                android:gravity="center"
+                                android:text="0 reviews"
+
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10ssp"
+                                android:textStyle="normal"
+                                app:layout_constraintBottom_toBottomOf="@+id/review_icon"
+                                app:layout_constraintStart_toEndOf="@+id/review_icon"
+                                app:layout_constraintTop_toTopOf="@+id/review_icon" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvRecyclerviewReview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginBottom="@dimen/_1sdp"
+                            android:nestedScrollingEnabled="false"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintTop_toBottomOf="@+id/totalCountCard"
+                            tools:listitem="@layout/review_item_card" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+
+                        />
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.tech.perfumos.ui.camera_perfume.CameraVm" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.camera_perfume.CameraActivity">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/captureImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="horizontal"
+            />
+
+
+        <ImageView
+            android:id="@+id/iv_camera_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/camera_bg"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/ivGif"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_140sdp"
+            app:layout_constraintBottom_toTopOf="@+id/guideCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/logo_gif"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_close"
+            android:onClick="@{v-> vm.onClick(v)}"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/_20sdp"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/CustomManropTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/center_the_fragrance_in_the_frame_nensuring_the_image_is_bright_amp_clear"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toTopOf="@+id/captureButton"
+            android:layout_marginBottom="@dimen/_20sdp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_gallery"
+            android:onClick="@{v-> vm.onClick(v)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_32sdp" />
+
+        <ImageView
+            android:id="@+id/captureButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/camera_icon"
+            android:onClick="@{v-> vm.onClick(v)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/_32sdp" />
+
+        <ImageView
+            android:id="@+id/iv_flash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_ion_flash_off"
+            android:layout_marginEnd="@dimen/_20sdp"
+
+            android:onClick="@{v-> vm.onClick(v)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_32sdp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCapture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:id="@+id/ivCapture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_camera_anim"
+                android:alpha="0.7"
+                />
+
+            <ImageView
+                android:id="@+id/ivGif1"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_120sdp"
+
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/_50sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_10sdp"
+                />
+
+            <ImageView
+                android:id="@+id/ivGif2"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_120sdp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/ivGif1"
+                />
+
+            <ImageView
+                android:id="@+id/ivGif3"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_120sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_50sdp"
+                />
+
+            <ImageView
+                android:id="@+id/ivGif4"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_120sdp"
+                app:layout_constraintBottom_toTopOf="@id/ivGif3"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

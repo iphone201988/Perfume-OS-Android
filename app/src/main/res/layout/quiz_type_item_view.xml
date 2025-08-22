@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="com.tech.perfumos.ui.base.SimpleRecyclerViewAdapter.SimpleCallback" />
+
+        <variable
+            name="pos"
+            type="Integer" />
+
+        <variable
+            name="bean"
+            type="com.tech.perfumos.ui.quiz.model.QuizCategoryList" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/bg_rank_card"
+        android:onClick="@{v ->callback.onItemClick(v, bean, pos)}"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/userProfile"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_72sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/white"
+            loadImage="@{bean.image}"
+            android:src="@drawable/dummy_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
+
+        <TextView
+            android:id="@+id/quizTypeTitle"
+            style="@style/CustomAliceTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{bean.title}"
+            android:textColor="@color/select_tab_text"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="normal"
+            android:layout_marginStart="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="@+id/userProfile"
+            app:layout_constraintStart_toEndOf="@+id/userProfile"/>
+
+        <TextView
+            android:id="@+id/nameUser"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="start|center"
+            android:text="@{bean.subTitle}"
+            android:textColor="@color/tab_count"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:minLines="2"
+            app:layout_constraintStart_toEndOf="@+id/userProfile"
+            app:layout_constraintTop_toBottomOf="@+id/quizTypeTitle"/>
+
+        <TextView
+            android:id="@+id/tvQues"
+            style="@style/CustomAliceTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="start|center"
+            android:text="@{String.valueOf(bean.totalQuestions) + ` Qs`}"
+            android:textColor="@color/sub_text_color1"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="normal"
+            android:layout_marginTop="@dimen/_5sdp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

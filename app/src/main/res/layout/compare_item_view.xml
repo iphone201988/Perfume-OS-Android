@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/bg_stroke_35"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_stroke_white_70"
+                android:backgroundTint="@color/bgWhiteFill70_100"
+                android:padding="@dimen/_5sdp">
+
+                <!-- Top Row: Image and Action Icons -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imagePerfume"
+                        android:layout_width="100dp"
+                        android:layout_height="120dp"
+                        android:layout_centerHorizontal="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/perfume_botton_dummy" />
+
+                    <ImageButton
+                        android:id="@+id/btnFavorite"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/unfavorite_icon" />
+
+                    <ImageButton
+                        android:id="@+id/btnSwap"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_below="@id/btnFavorite"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_refresh"
+
+                        />
+
+                </RelativeLayout>
+
+                <!-- Title and Subtitle -->
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/alice_regular"
+                    android:maxLines="1"
+                    android:text="Born With Sample Title"
+                    android:textColor="@color/color_forget_pass"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textBrand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Dior"
+                    android:fontFamily="@font/alice_regular"
+                    android:textColor="@color/home_welcome_txt"
+                    android:textSize="@dimen/_11ssp" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:alpha="0.2"
+                    android:background="@color/color_divider"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+
+                <!-- Learn More -->
+                <TextView
+                    android:id="@+id/textLearnMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:drawableRight="@drawable/ic_arrow_forward"
+                    android:drawablePadding="@dimen/_3sdp"
+                    android:textSize="@dimen/_11ssp"
+                    android:fontFamily="@font/alice_regular"
+                    android:text="Learn More"
+                    android:textColor="@color/home_welcome_txt"
+                    />
+            </LinearLayout>
+
+            <!-- Seasons -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Seasons"
+                android:textColor="@color/home_welcome_txt"
+                android:textSize="@dimen/_11ssp"
+                android:fontFamily="@font/alice_regular"
+                android:layout_marginTop="@dimen/_20sdp"
+                />
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:alpha="0.2"
+                android:background="@color/color_divider" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/seasonsGroup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_85sdp"
+                android:visibility="gone"
+                app:singleSelection="false"
+                app:chipSpacing="@dimen/_5sdp"
+
+                />
+
+            <TextView
+                android:id="@+id/noDataSeasons"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_85sdp"
+                android:layout_gravity="center_horizontal"
+                android:text="No record found"
+                android:gravity="center"
+                android:fontFamily="@font/alice_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/view3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/occasion"
+                android:textColor="@color/home_welcome_txt"
+                android:textSize="@dimen/_11ssp"
+                android:fontFamily="@font/alice_regular"
+                />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:alpha="0.2"
+                android:background="@color/color_divider" />
+
+
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/occasionGroup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:visibility="gone"
+                app:singleSelection="false"
+                app:chipSpacing="@dimen/_5sdp"/>
+
+            <TextView
+                android:id="@+id/noDataOccasion"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center_horizontal"
+                android:text="No record found"
+                android:gravity="center"
+                android:visibility="gone"
+                android:fontFamily="@font/alice_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_similar_perfumes_label"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+
+            <!-- Note Breakdown -->
+            <TextView
+                android:id="@+id/tv_note_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Note Breakdown"
+                android:textSize="@dimen/_11ssp"
+                android:fontFamily="@font/alice_regular"
+
+                android:textColor="@color/home_welcome_txt"
+                android:layout_marginTop="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/noDataNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="No perfume found"
+                android:fontFamily="@font/alice_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/tv_similar_perfumes_label"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_10sdp" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:alpha="0.2"
+                android:visibility="gone"
+                android:background="@color/color_divider"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llNotesMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/llNotesTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_note_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/vec_triangle_top"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_note_top"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/notesTopGroup"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/tv_note_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="center"
+                        android:text="@string/top"
+                        android:textColor="@color/text_secondary_color"
+                        android:textSize="@dimen/_8ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/notesTopGroup"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_note_top"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="@+id/iv_note_top"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_note_top"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <LinearLayout
+                        android:id="@+id/notesTopGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/iv_note_top"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:alpha="0.2"
+
+                    android:background="@color/color_divider"
+                    app:layout_constraintTop_toBottomOf="@+id/llNotesTop"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/llNotesMid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view5">
+
+                    <ImageView
+                        android:id="@+id/iv_note_mid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/vec_triangle_mid"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_note_mid"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/notesMidGroup"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/tv_note_mid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="center"
+                        android:text="@string/middle"
+                        android:textColor="@color/text_secondary_color"
+                        android:textSize="@dimen/_8ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/notesMidGroup"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_note_mid"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="@+id/iv_note_mid"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_note_mid"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <LinearLayout
+                        android:id="@+id/notesMidGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/iv_note_mid"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:alpha="0.2"
+                    android:background="@color/color_divider"
+                    app:layout_constraintTop_toBottomOf="@+id/llNotesMid"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/llNotesBase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view6">
+
+                    <ImageView
+                        android:id="@+id/iv_note_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/vec_triangle_bottom"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_note_base"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/notesBaseGroup"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/tv_note_base"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/alice_regular"
+                        android:gravity="center"
+                        android:text="@string/bottom"
+                        android:textColor="@color/text_secondary_color"
+                        android:textSize="@dimen/_8ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/notesBaseGroup"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_note_base"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="@+id/iv_note_base"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_note_base"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <LinearLayout
+                        android:id="@+id/notesBaseGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/iv_note_base"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--<View
+                    android:id="@+id/view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:alpha="0.2"
+                    android:background="@color/color_divider"
+                    app:layout_constraintTop_toBottomOf="@+id/llNotesBase"
+                    />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--<View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:alpha="0.2"
+            android:background="@color/color_divider" />-->
+
+
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
